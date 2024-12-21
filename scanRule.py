@@ -14,11 +14,14 @@ port_scan_detected = defaultdict(bool)
 # Słownik do przechowywania stanu połączeń TCP
 tcp_connections = defaultdict(lambda: {"syn": False, "ack": False, "data": False})
 
-# Limit czasu (w sekundach), po którym IP zostaje usunięte
-TIMEOUT = 300  # 5 minut
+# Limit czasu (w sekundach), po którym IP zostaje usunięte (5 minut)
+TIMEOUT = 300  
 
 # Próg skanowania – co najmniej 10 portów z jednego IP
 SCAN_THRESHOLD = 10
+
+# Globalna zmienna do zliczania przetworzonych pakietów
+packet_count = 0
 
 def process_packet(packet):
     """
@@ -29,11 +32,11 @@ def process_packet(packet):
     current_time = time.time()  # Aktualny czas w sekundach od epoki UNIX
 
     # Usuwanie IP, które były nieaktywne przez dłuższy czas
-    inactive_ips = [ip for ip, last_time in last_seen.items() if current_time - last_time > TIMEOUT]
+    inactive_ips = [ip for ip, last_time in last_seen.items() 
+                    if current_time - last_time > TIMEOUT]
     for ip in inactive_ips:
         del src_to_ports[ip]
         del last_seen[ip]
-        # Jeśli śledzimy też czy skan został wykryty, możemy to wyzerować:
         if ip in port_scan_detected:
             del port_scan_detected[ip]
 
@@ -44,55 +47,94 @@ def process_packet(packet):
     # Aktualizacja czasu ostatniej aktywności
     last_seen[src_ip] = current_time
 
-    # Aktualizacja zestawu portów dla danego IP
+    # Dodajemy nowy port (jeśli jeszcze nie było go w zbiorze)
     if dst_port not in src_to_ports[src_ip]:
         src_to_ports[src_ip].add(dst_port)
 
-        # Możemy wciąż wyświetlać aktualną liczbę portów, np. w formie debug:
-        print(f"[DEBUG] {src_ip} -> port {dst_port}, liczba portów: {len(src_to_ports[src_ip])}")
-
-        # Sprawdzamy, czy osiągnęliśmy próg 10 portów.
-        if len(src_to_ports[src_ip]) >= SCAN_THRESHOLD and not port_scan_detected[src_ip]:
-            print(f"Port scanning detected from {src_ip}: scanned at least {len(src_to_ports[src_ip])} ports!")
+        # Sprawdzamy, czy osiągnęliśmy próg (SCAN_THRESHOLD).
+        if (len(src_to_ports[src_ip]) >= SCAN_THRESHOLD 
+                and not port_scan_detected[src_ip]):
+            print(f"Port scanning detected from {src_ip}: "
+                  f"scanned at least {len(src_to_ports[src_ip])} ports!")
             port_scan_detected[src_ip] = True
 
 def monitor_pkts(pkt):
+    global packet_count
+    packet_count += 1  # zliczamy każdy przetworzony pakiet
+
     if IP in pkt and TCP in pkt:
         src_ip = pkt[IP].src
         dst_ip = pkt[IP].dst
         src_port = pkt[TCP].sport
         dst_port = pkt[TCP].dport
 
-        # UWAGA: pkt[TCP].flags to liczba, nie string:
-        flags = pkt[TCP].flags
+        flags = pkt[TCP].flags  # to jest liczba, bitowo oznaczająca flagi
 
         # Klucz identyfikujący połączenie
         connection_id = (src_ip, dst_ip, src_port, dst_port)
 
-        # Prosty mechanizm wykrywania handshake (SYN -> SYN-ACK -> ACK z danymi)
-        # Flaga SYN (0x02)
-        if flags & 0x02 and not (flags & 0x10):  # SYN samodzielny
+        # Mechanizm wykrywania handshake (SYN -> SYN+ACK -> ACK z danymi)
+        # Flaga SYN to bit 0x02
+        if (flags & 0x02) and not (flags & 0x10):  # SYN bez ACK
             tcp_connections[connection_id]["syn"] = True
 
-        # Flaga SYN-ACK to 0x12 w zapisie heksadecymalnym (18 w dziesiętnym)
-        if flags == 0x12:  # SYN + ACK
+        # Flaga SYN-ACK to 0x12 (dec 18)
+        if flags == 0x12:
             tcp_connections[connection_id]["ack"] = True
 
-        # Flaga ACK (0x10); sprawdzamy czy w pakiecie są dane
+        # Flaga ACK (0x10) + payload > 0 -> mamy dane
         if (flags & 0x10) and len(pkt[TCP].payload) > 0:
             tcp_connections[connection_id]["data"] = True
 
         # Jeśli mamy SYN, SYN-ACK i ACK z danymi, uznajemy połączenie za zestawione
-        if (tcp_connections[connection_id]["syn"] and 
-            tcp_connections[connection_id]["ack"] and 
-            tcp_connections[connection_id]["data"]):
-            print(f"Communication detected between {src_ip}:{src_port} and {dst_ip}:{dst_port}")
+        if (tcp_connections[connection_id]["syn"]
+            and tcp_connections[connection_id]["ack"]
+            and tcp_connections[connection_id]["data"]):
+            print(f"Communication detected between {src_ip}:{src_port} "
+                  f"and {dst_ip}:{dst_port}")
             del tcp_connections[connection_id]
 
         # Uzupełniamy słownik danych dla funkcji process_packet
         packet_data = {"src_ip": src_ip, "dst_port": dst_port}
         process_packet(packet_data)
 
+def print_summary():
+    """
+    Funkcja wyświetlająca podsumowanie na koniec działania programu
+    (np. po naciśnięciu Ctrl+C).
+    """
+    print("\n=== SUMMARY ===")
+    print(f"Total processed packets : {packet_count}")
+    
+    # Liczba unikalnych IP (tylko te, co się pojawiły, nawet jeśli nie skanowały)
+    unique_ips = len(src_to_ports)
+    print(f"Unique source IPs       : {unique_ips}")
+
+    # Liczba IP oznaczonych jako skanujące
+    scanning_ips_list = [ip for ip, scanned in port_scan_detected.items() if scanned]
+    print(f"IPs flagged for scanning: {len(scanning_ips_list)}")
+
+    # Wyświetlamy listę skanerów z przeskanowanymi portami
+    if scanning_ips_list:
+        print("\nList of IPs flagged as scanners and their scanned ports:")
+        for ip in scanning_ips_list:
+            # Dla pewności bierzemy listę przeskanowanych portów i sortujemy
+            ports_list = sorted(src_to_ports.get(ip, []))
+            print(f"  - {ip} -> scanned ports: {ports_list}")
+    else:
+        print("No scanners were detected.")
+
+    print("=== END ===\n")
+
 if __name__ == "__main__":
-    print(get_if_list())
-    sniff(iface="lo", filter="ip", prn=monitor_pkts)
+    try:
+        print("Available interfaces:", get_if_list())
+        print("Starting sniffing on interface: lo (loopback). Press Ctrl+C to stop.\n")
+
+        sniff(iface="lo", filter="ip", prn=monitor_pkts)
+
+    except KeyboardInterrupt:
+        print("\n[!] Stopped by user.")
+    finally:
+        # Wyświetlamy podsumowanie
+        print_summary()
