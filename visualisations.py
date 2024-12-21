@@ -164,20 +164,20 @@ def show_correlation(data):
 
 
 
-if __name__ == "__main__":
-    dataset = import_pcap('traffic_test.pcap')
-    dataset = filter_ipv6(dataset)
-    dataset = clean_data(dataset)
+# if __name__ == "__main__":
+#     dataset = import_pcap('traffic_test.pcap')
+#     dataset = filter_ipv6(dataset)
+#     dataset = clean_data(dataset)
 
-    learning_set = create_learning_set("normal_traffic.pcap", "malicious_traffic.pcap")
-    print(learning_set.head())
+#     learning_set = create_learning_set("normal_traffic.pcap", "malicious_traffic.pcap")
+#     print(learning_set.head())
 
-    show_correlation(learning_set)
-    # generate_flow_statistics(dataset)
-    # generate_network_graph(dataset)
-    # print(create_packet_matrix(dataset))
+#     show_correlation(learning_set)
+#     # generate_flow_statistics(dataset)
+#     # generate_network_graph(dataset)
+#     # print(create_packet_matrix(dataset))
 
-    # detector = SigmaDetector("sigma")
+#     # detector = SigmaDetector("sigma")
 
-    # Detekcja
-    # result_df = detector.detect(dataset)
+#     # Detekcja
+#     # result_df = detector.detect(dataset)

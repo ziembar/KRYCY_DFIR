@@ -12,9 +12,7 @@ def import_pcap(filename):
   streamer = NFStreamer(source=filename)
   return streamer.to_pandas()
 
-
-
-
+ 
 def clean_data(dataset):
 # Usuwanie kolumn, które mają tylko jedną unikalną wartość lub brakujące wartości
     for col in dataset.columns:
