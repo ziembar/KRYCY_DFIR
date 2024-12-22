@@ -231,7 +231,6 @@ class RuleDetector:
         # IP, które wykryliśmy jako skanujące
         scanning_ips_list = [ip for ip, scanned in self.port_scan_detected.items() if scanned]
         print(f"IPs flagged for scanning: {len(scanning_ips_list)}")
-
         if scanning_ips_list:
             print("\nList of IPs flagged as scanners and their scanned ports:")
             for ip in scanning_ips_list:
@@ -273,11 +272,15 @@ class RuleDetector:
         # ==============================
         #   NIEBEZPIECZNE POŁĄCZENIA
         # ==============================
-        print("\n=== DANGEROUS TCP CONNECTIONS ===")
+        print("\n=== DANGEROUS TCP CONNECTIONS (once per src_ip-dst_ip) ===")
+
         dangerous_connections_list = []
+        already_reported_pairs = set()  # Tutaj zapamiętamy, że (src_ip, dst_ip) już zapisaliśmy
 
         for (src_ip, dst_ip, s_port, d_port), conn_info in self.tcp_connections.items():
             reasons = []
+
+            # Sprawdzamy, dlaczego IP/flow zostało uznane za niebezpieczne
             if self.port_scan_detected[src_ip]:
                 reasons.append("Port scanning")
             if self.large_traffic_detected[src_ip]:
@@ -287,27 +290,30 @@ class RuleDetector:
             if conn_info["big_flow_detected"]:
                 reasons.append("Big flow")
 
-            # Jeśli są jakiekolwiek powody, uznajemy flow za niebezpieczne
-            if reasons:
+            # Jeśli jest jakikolwiek powód i jeszcze nie dodawaliśmy (src_ip, dst_ip)
+            if reasons and (src_ip, dst_ip) not in already_reported_pairs:
                 record = {
                     "timestamp": conn_info.get("start_time", "[Unknown time]"),
                     "source_ip": src_ip,
                     "destination_ip": dst_ip,
-                    "scanned_ports": ", ".join(map(str, sorted(self.src_to_ports[src_ip]))),
+                    "scanned_ports": sorted(list(self.src_to_ports[src_ip])),
                     "flow_bytes": conn_info["flow_bytes"],
+                    # "query" to lista powodów oznaczenia jako niebezpieczne
                     "query": reasons
                 }
                 dangerous_connections_list.append(record)
+                already_reported_pairs.add((src_ip, dst_ip))
 
-        # Zamiast drukować listę na konsoli, zapisujemy ją do pliku JSON
+        # Zapisujemy do pliku JSON tylko, jeśli są jakieś niebezpieczne połączenia
         if dangerous_connections_list:
             with open("scannerRes.json", "w") as f:
                 json.dump(dangerous_connections_list, f, indent=2)
-            print(f"[INFO] Zapisano {len(dangerous_connections_list)} niebezpiecznych połączeń do pliku scannerRes.json.")
+            print(f"[INFO] Zapisano {len(dangerous_connections_list)} niebezpiecznych wpisów do 'scannerRes.json'.")
         else:
             print("No dangerous TCP connections detected.")
 
         print("=== END ===\n")
+
 
 
 
