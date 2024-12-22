@@ -256,8 +256,7 @@ class DecisionTreeClassifierWrapper:
     def predict(self, X):
         return self.model.predict(X)
 
-    def predict_packets(self, pcap):
-        df_original = NFStreamer(source=pcap).to_pandas()
+    def predict_packets(self, df_original):
         df = df_original.copy()
 
 

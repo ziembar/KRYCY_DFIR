@@ -2,7 +2,9 @@ import json
 # Jeśli Twój plik z klasą RuleDetector nazywa się np. rule_detector.py
 # zaimportuj go w ten sposób:
 from ml_model import DecisionTreeClassifierWrapper
+import visualisations
 from youRule import RuleDetector
+from nfstream import NFStreamer
 
 # Zakładamy, że kod SigRules znajduje się w pliku sigmaRulePCAP.py
 # z odpowiednimi klasami i funkcjami (SigRules, print_summary itp.)
@@ -16,6 +18,12 @@ def main():
     pcap_path = input("Podaj ścieżkę do pliku .pcap: ")
     interfaceToScan = input("Podaj interfejs do skanu: ")
 
+    df_original = NFStreamer(source=pcap_path).to_pandas()
+
+    visualisations.generate_flow_statistics(df_original)
+    visualisations.generate_network_graph(df_original)
+    print(visualisations.create_packet_matrix(df_original))
+
     # Pliki Sigma (załóżmy, że są w stałych ścieżkach)
     sigma_files = [
         "sigma/sigmaOne.yml",
@@ -27,7 +35,7 @@ def main():
     analysis_results = sig_rules.analyze()
 
     tree = DecisionTreeClassifierWrapper()
-    tree.predict_packets(pcap_path)
+    tree.predict_packets(df_original)
 
     # 2) Utwórz obiekt RuleDetector z wybranymi parametrami
     detector = RuleDetector(
