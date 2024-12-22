@@ -219,8 +219,6 @@ class RuleDetector:
             packet_data = {"src_ip": src_ip, "dst_port": dst_port}
             self.process_packet(packet_data)
 
-import json
-
 def print_summary(self):
     enrichment = Enrichment()
     print("\n=== SUMMARY ===")
@@ -295,7 +293,7 @@ def print_summary(self):
                 "timestamp": conn_info.get("start_time", "[Unknown time]"),
                 "source_ip": src_ip,
                 "destination_ip": dst_ip,
-                "scanned_ports": sorted(list(self.src_to_ports[src_ip])),
+                "scanned_ports": ", ".join(map(str, sorted(self.src_to_ports[src_ip]))),
                 "flow_bytes": conn_info["flow_bytes"],
                 "query": reasons
             }
