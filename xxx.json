@@ -1,0 +1,14 @@
+[
+    {
+        "ip": "8.8.8.8",
+        "kraj": "United States",
+        "miasto": "Ashburn",
+        "dostawca_usług_internetowych": "Google LLC"
+    },
+    {
+        "ip": "69.63.176.13",
+        "kraj": "United States",
+        "miasto": "Sterling",
+        "dostawca_usług_internetowych": "Facebook, Inc."
+    }
+]
