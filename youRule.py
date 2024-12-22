@@ -219,95 +219,95 @@ class RuleDetector:
             packet_data = {"src_ip": src_ip, "dst_port": dst_port}
             self.process_packet(packet_data)
 
-def print_summary(self):
-    enrichment = Enrichment()
-    print("\n=== SUMMARY ===")
-    print(f"Total processed packets : {self.packet_count}")
+    def print_summary(self):
+        enrichment = Enrichment()
+        print("\n=== SUMMARY ===")
+        print(f"Total processed packets : {self.packet_count}")
 
-    # Unikalne IP
-    unique_ips = len(self.src_to_ports)
-    print(f"Unique source IPs       : {unique_ips}")
+        # Unikalne IP
+        unique_ips = len(self.src_to_ports)
+        print(f"Unique source IPs       : {unique_ips}")
 
-    # IP, które wykryliśmy jako skanujące
-    scanning_ips_list = [ip for ip, scanned in self.port_scan_detected.items() if scanned]
-    print(f"IPs flagged for scanning: {len(scanning_ips_list)}")
+        # IP, które wykryliśmy jako skanujące
+        scanning_ips_list = [ip for ip, scanned in self.port_scan_detected.items() if scanned]
+        print(f"IPs flagged for scanning: {len(scanning_ips_list)}")
 
-    if scanning_ips_list:
-        print("\nList of IPs flagged as scanners and their scanned ports:")
-        for ip in scanning_ips_list:
-            ports_list = sorted(self.src_to_ports.get(ip, []))
-            location = enrichment.get_ip_location(ip)
-            if location:
-                print(f"  - {ip} ({location['kraj']}, {location['miasto']}, ISP: {location['dostawca_usług_internetowych']}) -> scanned ports: {ports_list}")
-            else:
-                print(f"  - {ip} -> scanned ports: {ports_list} (location information not available)")
-    else:
-        print("No IPs were flagged for port scanning.")
+        if scanning_ips_list:
+            print("\nList of IPs flagged as scanners and their scanned ports:")
+            for ip in scanning_ips_list:
+                ports_list = sorted(self.src_to_ports.get(ip, []))
+                location = enrichment.get_ip_location(ip)
+                if location:
+                    print(f"  - {ip} ({location['kraj']}, {location['miasto']}, ISP: {location['dostawca_usług_internetowych']}) -> scanned ports: {ports_list}")
+                else:
+                    print(f"  - {ip} -> scanned ports: {ports_list} (location information not available)")
+        else:
+            print("No IPs were flagged for port scanning.")
 
-    # IP z dużym / częstym ruchem
-    large_traffic_list = [ip for ip, flagged in self.large_traffic_detected.items() if flagged]
-    frequent_traffic_list = [ip for ip, flagged in self.frequent_traffic_detected.items() if flagged]
+        # IP z dużym / częstym ruchem
+        large_traffic_list = [ip for ip, flagged in self.large_traffic_detected.items() if flagged]
+        frequent_traffic_list = [ip for ip, flagged in self.frequent_traffic_detected.items() if flagged]
 
-    if large_traffic_list:
-        print("\nList of IPs flagged for large traffic:")
-        for ip in large_traffic_list:
-            print(f"  - {ip}: total packets -> {self.ip_packet_count.get(ip, 0)}")
+        if large_traffic_list:
+            print("\nList of IPs flagged for large traffic:")
+            for ip in large_traffic_list:
+                print(f"  - {ip}: total packets -> {self.ip_packet_count.get(ip, 0)}")
 
-    if frequent_traffic_list:
-        print("\nList of IPs flagged for frequent traffic:")
-        for ip in frequent_traffic_list:
-            count_last_window = len(self.ip_packet_times[ip])  # Ostatni stan listy
-            print(f"  - {ip}: {count_last_window} packets in {self.FREQUENT_TRAFFIC_WINDOW} s window")
+        if frequent_traffic_list:
+            print("\nList of IPs flagged for frequent traffic:")
+            for ip in frequent_traffic_list:
+                count_last_window = len(self.ip_packet_times[ip])  # Ostatni stan listy
+                print(f"  - {ip}: {count_last_window} packets in {self.FREQUENT_TRAFFIC_WINDOW} s window")
 
-    # Połączenia (flow), które przekroczyły próg bajtów (FLOW_SIZE_THRESHOLD)
-    big_flows = [
-        (conn_id, info)
-        for conn_id, info in self.tcp_connections.items()
-        if info["flow_bytes"] > self.FLOW_SIZE_THRESHOLD
-    ]
-    if big_flows:
-        print(f"\nList of flows that exceeded {self.FLOW_SIZE_THRESHOLD} bytes of payload:")
-        for (src_ip, dst_ip, s_port, d_port), info in big_flows:
-            print(f"  - {src_ip}:{s_port} -> {dst_ip}:{d_port}, total = {info['flow_bytes']} bytes")
+        # Połączenia (flow), które przekroczyły próg bajtów (FLOW_SIZE_THRESHOLD)
+        big_flows = [
+            (conn_id, info)
+            for conn_id, info in self.tcp_connections.items()
+            if info["flow_bytes"] > self.FLOW_SIZE_THRESHOLD
+        ]
+        if big_flows:
+            print(f"\nList of flows that exceeded {self.FLOW_SIZE_THRESHOLD} bytes of payload:")
+            for (src_ip, dst_ip, s_port, d_port), info in big_flows:
+                print(f"  - {src_ip}:{s_port} -> {dst_ip}:{d_port}, total = {info['flow_bytes']} bytes")
 
-    # ==============================
-    #   NIEBEZPIECZNE POŁĄCZENIA
-    # ==============================
-    print("\n=== DANGEROUS TCP CONNECTIONS ===")
-    dangerous_connections_list = []
+        # ==============================
+        #   NIEBEZPIECZNE POŁĄCZENIA
+        # ==============================
+        print("\n=== DANGEROUS TCP CONNECTIONS ===")
+        dangerous_connections_list = []
 
-    for (src_ip, dst_ip, s_port, d_port), conn_info in self.tcp_connections.items():
-        reasons = []
-        if self.port_scan_detected[src_ip]:
-            reasons.append("Port scanning")
-        if self.large_traffic_detected[src_ip]:
-            reasons.append("Large traffic")
-        if self.frequent_traffic_detected[src_ip]:
-            reasons.append("Frequent traffic")
-        if conn_info["big_flow_detected"]:
-            reasons.append("Big flow")
+        for (src_ip, dst_ip, s_port, d_port), conn_info in self.tcp_connections.items():
+            reasons = []
+            if self.port_scan_detected[src_ip]:
+                reasons.append("Port scanning")
+            if self.large_traffic_detected[src_ip]:
+                reasons.append("Large traffic")
+            if self.frequent_traffic_detected[src_ip]:
+                reasons.append("Frequent traffic")
+            if conn_info["big_flow_detected"]:
+                reasons.append("Big flow")
 
-        # Jeśli są jakiekolwiek powody, uznajemy flow za niebezpieczne
-        if reasons:
-            record = {
-                "timestamp": conn_info.get("start_time", "[Unknown time]"),
-                "source_ip": src_ip,
-                "destination_ip": dst_ip,
-                "scanned_ports": ", ".join(map(str, sorted(self.src_to_ports[src_ip]))),
-                "flow_bytes": conn_info["flow_bytes"],
-                "query": reasons
-            }
-            dangerous_connections_list.append(record)
+            # Jeśli są jakiekolwiek powody, uznajemy flow za niebezpieczne
+            if reasons:
+                record = {
+                    "timestamp": conn_info.get("start_time", "[Unknown time]"),
+                    "source_ip": src_ip,
+                    "destination_ip": dst_ip,
+                    "scanned_ports": ", ".join(map(str, sorted(self.src_to_ports[src_ip]))),
+                    "flow_bytes": conn_info["flow_bytes"],
+                    "query": reasons
+                }
+                dangerous_connections_list.append(record)
 
-    # Zamiast drukować listę na konsoli, zapisujemy ją do pliku JSON
-    if dangerous_connections_list:
-        with open("scannerRes.json", "w") as f:
-            json.dump(dangerous_connections_list, f, indent=2)
-        print(f"[INFO] Zapisano {len(dangerous_connections_list)} niebezpiecznych połączeń do pliku scannerRes.json.")
-    else:
-        print("No dangerous TCP connections detected.")
+        # Zamiast drukować listę na konsoli, zapisujemy ją do pliku JSON
+        if dangerous_connections_list:
+            with open("scannerRes.json", "w") as f:
+                json.dump(dangerous_connections_list, f, indent=2)
+            print(f"[INFO] Zapisano {len(dangerous_connections_list)} niebezpiecznych połączeń do pliku scannerRes.json.")
+        else:
+            print("No dangerous TCP connections detected.")
 
-    print("=== END ===\n")
+        print("=== END ===\n")
 
 
 
