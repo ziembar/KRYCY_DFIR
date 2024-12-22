@@ -219,6 +219,8 @@ class RuleDetector:
             packet_data = {"src_ip": src_ip, "dst_port": dst_port}
             self.process_packet(packet_data)
 
+import json
+
 def print_summary(self):
     enrichment = Enrichment()
     print("\n=== SUMMARY ===")
@@ -308,6 +310,7 @@ def print_summary(self):
         print("No dangerous TCP connections detected.")
 
     print("=== END ===\n")
+
 
 
 # ---------------------------------
