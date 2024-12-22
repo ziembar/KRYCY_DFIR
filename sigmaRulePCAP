@@ -1,0 +1,105 @@
+import yaml
+import pyshark
+import json
+
+
+class SigRules:
+    """
+    Klasa do analizy plików PCAP za pomocą reguł Sigma zapisanych w formacie YAML.
+    """
+    def __init__(self, pcap_file, sigma_files):
+        """
+        Inicjalizuje klasę z plikiem PCAP i listą plików Sigma.
+        """
+        self.pcap_file = pcap_file
+        self.sigma_files = sigma_files
+
+    @staticmethod
+    def parse_sigma_file(file_path):
+        """
+        Parsuje plik YAML z regułą Sigma i wyciąga kryteria detekcji (selection.query).
+        """
+        with open(file_path, 'r') as f:
+            sigma_rule = yaml.safe_load(f)
+        detection = sigma_rule.get("detection", {})
+        selection = detection.get("selection", {})
+        query = selection.get("query", None)
+        
+        # Obsługa list i pojedynczych wartości
+        if isinstance(query, str):
+            return [query]
+        elif isinstance(query, list):
+            return query
+        return []
+
+    @staticmethod
+    def analyze_pcap_with_sigma(pcap_path, criteria_list):
+        """
+        Analizuje plik PCAP i sprawdza, czy zapytania DNS spełniają kryteria Sigma.
+        """
+        detected_logs = []
+        capture = pyshark.FileCapture(pcap_path, display_filter='dns')  # Filtrujemy tylko pakiety DNS
+        
+        for packet in capture:
+            try:
+                # Sprawdzanie zapytań DNS
+                if hasattr(packet.dns, 'qry_name'):
+                    query_name = packet.dns.qry_name.lower()
+
+                    # Dopasowanie do kryteriów
+                    if any(criteria in query_name for criteria in criteria_list):
+                        detected_logs.append({
+                            "timestamp": packet.sniff_time.isoformat(),
+                            "query": query_name,
+                            "source_ip": packet.ip.src,
+                            "destination_ip": packet.ip.dst
+                        })
+            except AttributeError:
+                continue
+
+        capture.close()
+        return detected_logs
+
+    def analyze(self,pkt):
+        """
+        Analizuje plik PCAP z wieloma regułami Sigma.
+        """
+        results = {}
+        for sigma_file in self.sigma_files:
+            criteria = self.parse_sigma_file(sigma_file)
+            rule_name = sigma_file.split('/')[-1]  # Wyciąganie nazwy pliku jako identyfikatora reguły
+            results[rule_name] = self.analyze_pcap_with_sigma(self.pcap_file, criteria)
+        return results
+
+
+# Przykład użycia
+if __name__ == "__main__":
+    # Ścieżka do pliku PCAP
+    pcap_file = "zzz.pcap"
+    
+    # Ścieżki do reguł Sigma
+    sigma_files = [
+        "sigma_rules/sigmaOne.yml",  # Plik z regułą Telegram API
+        "sigma_rules/sigmaTwo.yml"   # Plik z regułą DNS Tor Proxies
+    ]
+    
+    # Tworzenie instancji klasy SigRules
+    sig_rules = SigRules(pcap_file, sigma_files)
+    
+    # Analiza PCAP z regułami Sigma
+    analysis_results = sig_rules.analyze()
+    try:
+        print("Available interfaces:", get_if_list())
+        print("Starting sniffing on interface: lo (loopback). Press Ctrl+C to stop.\n")
+
+        sniff(iface="lo", filter="ip", prn=monitor_pkts)
+
+    except KeyboardInterrupt:
+        print("\n[!] Stopped by user.")
+    finally:
+        # Wyświetlamy podsumowanie
+        print_summary()
+    
+    # Wyświetlenie wyników
+    print("\nDetected Logs:")
+    print(json.dumps(analysis_results, indent=2))
