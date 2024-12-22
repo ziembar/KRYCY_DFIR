@@ -1,7 +1,10 @@
 import time
+import datetime
+import json
 from collections import defaultdict
 from scapy.all import sniff, IP, TCP, get_if_list
 from Enrichment_Service import Enrichment
+
 class RuleDetector:
     """
     Klasa realizująca wykrywanie:
@@ -45,13 +48,16 @@ class RuleDetector:
         self.last_seen = {}                        # IP -> timestamp ostatniego pakietu
         self.port_scan_detected = defaultdict(bool)# IP -> czy wykryto skan
 
-        # 2. Stan połączeń TCP (zliczamy także bajty w flow)
+        # 2. Stan połączeń TCP (zliczamy także bajty w flow).
         #    Każde połączenie identyfikujemy krotką (src_ip, dst_ip, src_port, dst_port).
-        #    flow_bytes – zlicza, ile bajtów payloadu widzieliśmy w tym połączeniu.
-        #    big_flow_detected – czy już ostrzegaliśmy, że flow przekroczył próg.
+        #    Dodatkowo: 'start_time' do zapisu momentu pierwszego pakietu w danym flow.
         self.tcp_connections = defaultdict(lambda: {
-            "syn": False, "ack": False, "data": False,
-            "flow_bytes": 0, "big_flow_detected": False
+            "syn": False, 
+            "ack": False, 
+            "data": False,
+            "flow_bytes": 0, 
+            "big_flow_detected": False,
+            "start_time": None
         })
 
         # -----------------------------
@@ -66,7 +72,6 @@ class RuleDetector:
         # Statystyki
         # -----------------------------
         self.packet_count = 0  # łączna liczba przetworzonych pakietów
-
 
     # -----------------------------
     # Reguły: duży ruch i częsty ruch (dla IP)
@@ -116,7 +121,6 @@ class RuleDetector:
             print(f"[SUSPICIOUS] Flow {src_ip}:{src_port} -> {dst_ip}:{dst_port} "
                   f"exceeded {self.FLOW_SIZE_THRESHOLD} bytes of TCP payload.")
             flow_info["big_flow_detected"] = True
-
 
     # -----------------------------
     # Główne przetwarzanie pakietu (dla IP, portu)
@@ -169,7 +173,6 @@ class RuleDetector:
         self.check_large_traffic(src_ip)
         self.check_frequent_traffic(src_ip)
 
-
     # -----------------------------
     # Funkcja wywoływana dla każdego pakietu (Scapy sniff)
     # -----------------------------
@@ -179,7 +182,6 @@ class RuleDetector:
         """
         self.packet_count += 1
 
-        # Interesują nas pakiety z warstwą IP i TCP
         if IP in pkt and TCP in pkt:
             src_ip = pkt[IP].src
             dst_ip = pkt[IP].dst
@@ -187,36 +189,34 @@ class RuleDetector:
             dst_port = pkt[TCP].dport
             flags = pkt[TCP].flags
 
-            # Klucz "połączenia" (flow)
             connection_id = (src_ip, dst_ip, src_port, dst_port)
             conn_info = self.tcp_connections[connection_id]
 
+            # Jeśli to pierwszy pakiet w tym flow, zapisz datę/czas
+            if conn_info["start_time"] is None:
+                conn_info["start_time"] = datetime.datetime.utcnow().isoformat()
+
             # Zliczamy rozmiar payloadu w tym połączeniu (flow)
-            # Możemy zsumować sam payload TCP:
             conn_info["flow_bytes"] += len(pkt[TCP].payload)
 
-            # Sprawdzamy, czy flow przekroczył nasz próg (FLOW_SIZE_THRESHOLD)
+            # Sprawdź próg dużego flow
             self.check_large_flow(connection_id, src_ip, dst_ip, src_port, dst_port)
 
             # Prosta logika trackowania handshake (SYN -> SYN+ACK -> ACK z danymi)
             if (flags & 0x02) and not (flags & 0x10):  # SYN bez ACK
                 conn_info["syn"] = True
-
             if flags == 0x12:  # SYN+ACK = 0x12
                 conn_info["ack"] = True
-
             if (flags & 0x10) and len(pkt[TCP].payload) > 0:  # ACK z danymi
                 conn_info["data"] = True
 
-            # Jeśli mamy SYN, SYN-ACK i ACK z danymi, uznajemy połączenie za zestawione
+            # Jeśli mamy SYN, SYN-ACK i ACK z danymi => komunikacja (połączenie zestawione)
             if conn_info["syn"] and conn_info["ack"] and conn_info["data"]:
                 print(f"Communication detected between {src_ip}:{src_port} and {dst_ip}:{dst_port}")
-                # Nie usuwamy jeszcze połączenia – dopóki trwa, sumujemy dalej flow_bytes.
 
-            # Wywołujemy logikę IP (port scan, duży/częsty ruch)
+            # Sprawdź także reguły IP
             packet_data = {"src_ip": src_ip, "dst_port": dst_port}
             self.process_packet(packet_data)
-
 
     def print_summary(self):
         enrichment = Enrichment()
@@ -230,7 +230,6 @@ class RuleDetector:
         # IP, które wykryliśmy jako skanujące
         scanning_ips_list = [ip for ip, scanned in self.port_scan_detected.items() if scanned]
         print(f"IPs flagged for scanning: {len(scanning_ips_list)}")
-
         if scanning_ips_list:
             print("\nList of IPs flagged as scanners and their scanned ports:")
             for ip in scanning_ips_list:
@@ -270,28 +269,43 @@ class RuleDetector:
                 print(f"  - {src_ip}:{s_port} -> {dst_ip}:{d_port}, total = {info['flow_bytes']} bytes")
 
         # ==============================
-        #   NIEBEZPIECZNE POŁĄCZENIA
+        #   NIEBEZPIECZNE POŁĄCZENIA (JSON-like)
         # ==============================
         print("\n=== DANGEROUS TCP CONNECTIONS ===")
-        dangerous_connections = []
-        for (src_ip, dst_ip, s_port, d_port), info in self.tcp_connections.items():
-            if (
-                self.port_scan_detected[src_ip] or
-                self.large_traffic_detected[src_ip] or
-                self.frequent_traffic_detected[src_ip] or
-                info["big_flow_detected"]
-            ):
-                dangerous_connections.append(((src_ip, dst_ip, s_port, d_port), info))
+        dangerous_connections_list = []
 
-        if dangerous_connections:
-            for (src_ip, dst_ip, s_port, d_port), conn_info in dangerous_connections:
-                print(f"Connection ID: {src_ip}:{s_port} -> {dst_ip}:{d_port}")
-                for k, v in conn_info.items():
-                    print(f"  {k}: {v}")
+        for (src_ip, dst_ip, s_port, d_port), conn_info in self.tcp_connections.items():
+            # Sprawdź przyczyny
+            reasons = []
+            if self.port_scan_detected[src_ip]:
+                reasons.append("Port scanning")
+            if self.large_traffic_detected[src_ip]:
+                reasons.append("Large traffic")
+            if self.frequent_traffic_detected[src_ip]:
+                reasons.append("Frequent traffic")
+            if conn_info["big_flow_detected"]:
+                reasons.append("Big flow")
+
+            # Jeśli są jakiekolwiek powody, uznajemy flow za niebezpieczne
+            if reasons:
+                record = {
+                    "timestamp": conn_info.get("start_time", "[Unknown time]"),
+                    "source_ip": src_ip,
+                    "destination_ip": dst_ip,
+                    "scanned_ports": sorted(list(self.src_to_ports[src_ip])),
+                    "flow_bytes": conn_info["flow_bytes"],
+                    # Główne pole "query" – lista powodów uznania flow za niebezpieczne
+                    "query": reasons  
+                }
+                dangerous_connections_list.append(record)
+
+        if dangerous_connections_list:
+            print(json.dumps(dangerous_connections_list, indent=2))
         else:
             print("No dangerous TCP connections detected.")
 
         print("=== END ===\n")
+
 
 # ---------------------------------
 # Przykładowe użycie klasy RuleDetector
