@@ -1,3 +1,4 @@
+import numpy as np
 from sklearn.preprocessing import LabelEncoder
 from sklearn.tree import DecisionTreeClassifier, plot_tree
 import pandas as pd
@@ -22,14 +23,15 @@ class DecisionTree:
 
     def preprocess_data(self, data):
         print("Preprocessing data...")
-        # Initialize LSH
-        lsh = MinHashLSH(threshold=0.5, num_perm=64)  # Reduced number of permutations
+        # # Initialize LSH
+        # lsh = MinHashLSH(threshold=0.5, num_perm=64)  # Reduced number of permutations
         
-        # Convert string columns to floats using LSH
-        for column in data.select_dtypes(include=['object']).columns:
-            print(f"Processing column: {column}")
-            data[column] = data[column].apply(lambda x: self.string_to_lsh_float(x, lsh))
+        # # Convert string columns to floats using LSH
+        # for column in data.select_dtypes(include=['object']).columns:
+        #     print(f"Processing column: {column}")
+        #     data[column] = data[column].apply(lambda x: self.string_to_lsh_float(x, lsh))
         
+        data = data.select_dtypes(include=[np.number])
         return data
 
 
@@ -188,7 +190,7 @@ class DecisionTree:
     def __init__(self, malicious_traffic, normal_traffic):
         ds = self.create_set( malicious_traffic, normal_traffic)
 
-        ds = ds.drop(columns=['src_mac', 'src_ip', 'dst_mac', 'dst_ip'])
+        ds = ds.drop(columns=['src_mac', 'src_ip', 'dst_mac', 'dst_ip', 'application_category_name', 'application_name', 'dst_oui', 'src_oui'])
         self.ds = ds
         
         X_train, X_test, y_train, y_test = self.split_data(ds)
