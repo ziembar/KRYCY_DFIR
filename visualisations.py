@@ -54,31 +54,6 @@ def generate_flow_statistics(dataset):
     plt.ylabel('Source Port')
     plt.grid(True)
 
-
-    data = dataset.select_dtypes(include=[np.number])
-    if 'label' in data.columns:
-        # Obliczanie korelacji wszystkich cech z etykietą
-        correlation_with_label = data.corr()['label'].sort_values(key=abs, ascending=False)
-
-        # Usunięcie korelacji etykiety z samą sobą
-        correlation_with_label = correlation_with_label.drop('label', errors='ignore')
-
-        # Wybór 10 najbardziej skorelowanych cech
-        top_10_correlated_features = correlation_with_label.head(10)
-
-        print("10 cech najbardziej skorelowanych z etykietą:\n", top_10_correlated_features)
-
-        # Wizualizacja korelacji tych cech z etykietą
-        plt.figure(figsize=(10, 6))
-        sns.barplot(x=top_10_correlated_features.index, y=top_10_correlated_features.values, palette='viridis')
-        plt.title('Top 10 cech najbardziej skorelowanych z etykietą')
-        plt.xlabel('Cechy')
-        plt.ylabel('Współczynnik korelacji')
-        plt.xticks(rotation=45)  # Obrót etykiet osi X dla lepszej czytelności
-    else:
-        print("Brak kolumny 'label' w danych.")
-
-
     plt.show()
 
 def generate_network_graph(dataset):
