@@ -219,9 +219,6 @@ class RuleDetector:
 
 
     def print_summary(self):
-        """
-        Wyświetla podsumowanie po zakończeniu sniffowania (np. po Ctrl+C).
-        """
         enrichment = Enrichment()
         print("\n=== SUMMARY ===")
         print(f"Total processed packets : {self.packet_count}")
@@ -261,10 +258,9 @@ class RuleDetector:
                 count_last_window = len(self.ip_packet_times[ip])  # Ostatni stan listy
                 print(f"  - {ip}: {count_last_window} packets in {self.FREQUENT_TRAFFIC_WINDOW} s window")
 
-        # Możemy jeszcze wypisać przepływy (flow), które przekroczyły próg bajtów
-        # (FLOW_SIZE_THRESHOLD), jeśli chcemy w podsumowaniu:
+        # Połączenia (flow), które przekroczyły próg bajtów (FLOW_SIZE_THRESHOLD)
         big_flows = [
-            (conn_id, info) 
+            (conn_id, info)
             for conn_id, info in self.tcp_connections.items()
             if info["flow_bytes"] > self.FLOW_SIZE_THRESHOLD
         ]
@@ -273,8 +269,29 @@ class RuleDetector:
             for (src_ip, dst_ip, s_port, d_port), info in big_flows:
                 print(f"  - {src_ip}:{s_port} -> {dst_ip}:{d_port}, total = {info['flow_bytes']} bytes")
 
-        print("=== END ===\n")
+        # ==============================
+        #   NIEBEZPIECZNE POŁĄCZENIA
+        # ==============================
+        print("\n=== DANGEROUS TCP CONNECTIONS ===")
+        dangerous_connections = []
+        for (src_ip, dst_ip, s_port, d_port), info in self.tcp_connections.items():
+            if (
+                self.port_scan_detected[src_ip] or
+                self.large_traffic_detected[src_ip] or
+                self.frequent_traffic_detected[src_ip] or
+                info["big_flow_detected"]
+            ):
+                dangerous_connections.append(((src_ip, dst_ip, s_port, d_port), info))
 
+        if dangerous_connections:
+            for (src_ip, dst_ip, s_port, d_port), conn_info in dangerous_connections:
+                print(f"Connection ID: {src_ip}:{s_port} -> {dst_ip}:{d_port}")
+                for k, v in conn_info.items():
+                    print(f"  {k}: {v}")
+        else:
+            print("No dangerous TCP connections detected.")
+
+        print("=== END ===\n")
 
 # ---------------------------------
 # Przykładowe użycie klasy RuleDetector
