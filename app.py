@@ -1,7 +1,6 @@
 import pickle
 import click
 from scapy.all import sniff, rdpcap, sendp, get_if_list, wrpcap
-from ML_detect import DecisionTree
 from nfstream import NFStreamer, NFPlugin
 import os
 import pandas as pd

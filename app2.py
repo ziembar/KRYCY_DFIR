@@ -1,6 +1,7 @@
 import json
 # Jeśli Twój plik z klasą RuleDetector nazywa się np. rule_detector.py
 # zaimportuj go w ten sposób:
+from ml_model import DecisionTreeClassifierWrapper
 from youRule import RuleDetector
 
 # Zakładamy, że kod SigRules znajduje się w pliku sigmaRulePCAP.py
@@ -24,6 +25,9 @@ def main():
     # 1) Utwórz i uruchom obiekt SigRules
     sig_rules = SigRules(pcap_file=pcap_path, sigma_files=sigma_files)
     analysis_results = sig_rules.analyze()
+
+    tree = DecisionTreeClassifierWrapper()
+    tree.predict_packets(pcap_path)
 
     # 2) Utwórz obiekt RuleDetector z wybranymi parametrami
     detector = RuleDetector(

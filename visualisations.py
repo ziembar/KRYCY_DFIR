@@ -1,4 +1,3 @@
-from nfstream import NFStreamer
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -163,6 +162,44 @@ def show_correlation(data):
 
     plt.show()
 
+def ML_summary(packet_info_list):
+    # Convert list of dicts to DataFrame
+    df = pd.DataFrame(packet_info_list)
+
+    # Plot of source IP addresses
+    plt.figure(figsize=(12, 6))
+    sns.countplot(y='src_ip', data=df, order=df['src_ip'].value_counts().index)
+    plt.title('Source IP Addresses')
+    plt.xlabel('Count')
+    plt.ylabel('Source IP')
+    plt.show()
+
+    # Plot of destination ports
+    plt.figure(figsize=(12, 6))
+    sns.countplot(y='dst_port', data=df, order=df['dst_port'].value_counts().index)
+    plt.title('Destination Ports')
+    plt.xlabel('Count')
+    plt.ylabel('Destination Port')
+    plt.show()
+
+    # Plot of protocols
+    plt.figure(figsize=(12, 6))
+    sns.countplot(y='protocol', data=df, order=df['protocol'].value_counts().index)
+    plt.title('Protocols')
+    plt.xlabel('Count')
+    plt.ylabel('Protocol')
+    plt.show()
+
+    # Histogram of bidirectional duration
+    plt.figure(figsize=(12, 6))
+    sns.histplot(df['bidirectional_duration_ms'], bins=30, kde=True)
+    plt.title('Histogram of Bidirectional Duration')
+    plt.xlabel('Duration (ms)')
+    plt.ylabel('Frequency')
+    plt.show()
+
+    
+
 
 
 if __name__ == "__main__":
@@ -177,3 +214,4 @@ if __name__ == "__main__":
     generate_flow_statistics(dataset)
     generate_network_graph(dataset)
     print(create_packet_matrix(dataset))
+
