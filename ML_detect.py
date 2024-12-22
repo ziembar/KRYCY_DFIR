@@ -6,26 +6,30 @@ from sklearn.tree import DecisionTreeClassifier, plot_tree
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 import core
-
+from datasketch import MinHash, MinHashLSH
 import visualisations
 
 class DecisionTree:
 
     
-    def encode_column(self, column):
-        le = LabelEncoder()
-        le.fit(column)
-        return le.transform(column)
+    def string_to_lsh_float(self, s, lsh):
+        m = MinHash(num_perm=64)  # Reduced number of permutations for faster processing
+        for token in str(s):
+            m.update(token.encode('utf8'))
+        if s not in lsh.keys:
+            lsh.insert(s, m)
+        return float(int.from_bytes(m.digest(), byteorder='big') % (10**8)) / (10**8)
 
-    def preprocess_data(self, data, encoder=None):
-        if encoder is None:
-            encoder = LabelEncoder()
-            for column in data.select_dtypes(include=['object']).columns:
-                data[column] = encoder.fit_transform(data[column])
-        else:
-            for column in data.select_dtypes(include=['object']).columns:
-                data[column] = encoder.transform(data[column])
-
+    def preprocess_data(self, data):
+        print("Preprocessing data...")
+        # Initialize LSH
+        lsh = MinHashLSH(threshold=0.5, num_perm=64)  # Reduced number of permutations
+        
+        # Convert string columns to floats using LSH
+        for column in data.select_dtypes(include=['object']).columns:
+            print(f"Processing column: {column}")
+            data[column] = data[column].apply(lambda x: self.string_to_lsh_float(x, lsh))
+        
         return data
 
 
@@ -58,9 +62,13 @@ class DecisionTree:
         y = data['label']
 
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.7, random_state=420)
-        encoder = LabelEncoder()
-        X_train = self.preprocess_data(X_train, encoder=encoder)
-        X_test = self.preprocess_data(X_test, encoder=encoder)
+        X_train = self.preprocess_data(X_train)
+        X_test = self.preprocess_data(X_test)
+
+        print(X_train.head())
+        print(X_test.head())
+        print(y_train.head())
+        print(y_test.head())
         return X_train, X_test, y_train, y_test
 
 
@@ -201,7 +209,6 @@ class DecisionTree:
 if __name__ == "__main__":
     tree = DecisionTree("pcap/maliciousFINAL.pcap", "pcap/normalFINAL.pcap")
     tree.show_details()
-    tree.test_model_on_new_data(tree.model, "pcap/malicious.pcap", "pcap/normalFINAL.pcap")
-    tree.classify_pcap("pcap/maliciousFINAL.pcap")
+    tree.test_model_on_new_data(tree.model, "pcap/malicious_traffic.pcap", "pcap/normal_traffic.pcap")
 
 
