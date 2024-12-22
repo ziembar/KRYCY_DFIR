@@ -222,7 +222,7 @@ class RuleDetector:
         """
         Wyświetla podsumowanie po zakończeniu sniffowania (np. po Ctrl+C).
         """
-        enruichment = Enrichment()
+        enrichment = Enrichment()
         print("\n=== SUMMARY ===")
         print(f"Total processed packets : {self.packet_count}")
 
