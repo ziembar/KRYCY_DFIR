@@ -1,6 +1,8 @@
 import yaml
 import pyshark
 import json
+from Enrichment_Service import Enrichment
+
 
 class SigRules:
     """
@@ -68,6 +70,7 @@ class SigRules:
         return results
 
 def print_summary(analysis_results):
+    enrich = Enrichment()
     """
     Wyświetla szczegółowe informacje o dopasowaniach i podsumowuje wyniki analizy.
     """
@@ -81,6 +84,10 @@ def print_summary(analysis_results):
                 print(f"    Query         : {match['query']}")
                 print(f"    Source IP     : {match['source_ip']}")
                 print(f"    Destination IP: {match['destination_ip']}")
+                location = enrich.get_ip_location(match['destination_ip'])
+                if location:
+                    print(f"      Location    : {location['kraj']}, {location['miasto']}")
+                    print(f"      ISP         : {location['dostawca_usług_internetowych']}")
                 total_matches += 1
         else:
             print("  (No matches found for this rule)")
@@ -90,11 +97,12 @@ def print_summary(analysis_results):
     print(f"Total matches found: {total_matches}")
     print("=== END ===\n")
 
+
 if __name__ == "__main__":
     pcap_file = "zzz.pcap"
     sigma_files = [
-        "sigma_rules/sigmaOne.yml",
-        "sigma_rules/sigmaTwo.yml"
+        "sigma/sigmaOne.yml",
+        "sigma/sigmaTwo.yml"
     ]
 
     sig_rules = SigRules(pcap_file, sigma_files)
@@ -103,3 +111,6 @@ if __name__ == "__main__":
     print("\nDetected Logs:")
     print(json.dumps(analysis_results, indent=2))
     print_summary(analysis_results)
+    print(analysis_results)
+    additional_data = {'sigmaOne.yml': [{'timestamp': '2024-12-21T01:08:19.253461', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.810', 'destination_ip': '8.8.8.8'}, {'timestamp': '2024-12-21T01:08:19.253503', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.810', 'destination_ip': '8.8.8.8'}, {'timestamp': '2024-12-21T01:08:19.339807', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.8', 'destination_ip': '8.8.8.810'}, {'timestamp': '2024-12-21T01:08:19.379514', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.8', 'destination_ip': '8.8.8.810'}, {'timestamp': '2024-12-21T01:08:21.682856', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.810', 'destination_ip': '8.8.8.8'}, {'timestamp': '2024-12-21T01:08:21.682899', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.810', 'destination_ip': '8.8.8.8'}, {'timestamp': '2024-12-21T01:08:21.723257', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.8', 'destination_ip': '8.8.8.810'}, {'timestamp': '2024-12-21T01:08:21.729974', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.8', 'destination_ip': '8.8.8.810'}], 'sigmaTwo.yml': [{'timestamp': '2024-12-21T01:08:03.640043', 'query': 'api.telegram.org', 'source_ip': '8.8.8.810', 'destination_ip': '8.8.8.8'}, {'timestamp': '2024-12-21T01:08:03.640129', 'query': 'api.telegram.org', 'source_ip': '8.8.8.810', 'destination_ip': '8.8.8.8'}, {'timestamp': '2024-12-21T01:08:03.678984', 'query': 'api.telegram.org', 'source_ip': '8.8.8.8', 'destination_ip': '8.8.8.810'}, {'timestamp': '2024-12-21T01:08:03.701756', 'query': 'api.telegram.org', 'source_ip': '8.8.8.8', 'destination_ip': '8.8.8.810'}]}
+    print_summary(additional_data)
