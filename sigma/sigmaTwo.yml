@@ -1,0 +1,11 @@
+title: Telegram Bot API Request
+id: c64c5175-5189-431b-a55e-6d9882158251
+status: test
+description: Detects suspicious DNS queries to api.telegram.org used by Telegram Bots of any kind
+logsource:
+    category: dns
+detection:
+    selection:
+        query: 'api.telegram.org'
+    condition: selection
+level: medium
