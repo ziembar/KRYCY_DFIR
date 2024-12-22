@@ -2,139 +2,147 @@ import time
 from collections import defaultdict
 from scapy.all import sniff, IP, TCP, get_if_list
 
-# Słownik do przechowywania unikalnych portów dla każdego źródłowego IP
-src_to_ports = defaultdict(set)
 
-# Słownik do przechowywania czasu ostatniej aktywności każdego IP
-last_seen = {}
+class RuleDetector():
 
-# Słownik do przechowywania informacji, czy dla danego IP wykryto już skanowanie
-port_scan_detected = defaultdict(bool)
+    def __init__(self):
+        # Słownik do przechowywania unikalnych portów dla każdego źródłowego IP
+        self.src_to_ports = defaultdict(set)
 
-# Słownik do przechowywania stanu połączeń TCP
-tcp_connections = defaultdict(lambda: {"syn": False, "ack": False, "data": False})
+        # Słownik do przechowywania czasu ostatniej aktywności każdego IP
+        self.last_seen = {}
 
-# Limit czasu (w sekundach), po którym IP zostaje usunięte (5 minut)
-TIMEOUT = 300  
+        # Słownik do przechowywania informacji, czy dla danego IP wykryto już skanowanie
+        self.port_scan_detected = defaultdict(bool)
 
-# Próg skanowania – co najmniej 10 portów z jednego IP
-SCAN_THRESHOLD = 10
+        # Słownik do przechowywania stanu połączeń TCP
+        self.tcp_connections = defaultdict(lambda: {"syn": False, "ack": False, "data": False})
 
-# Globalna zmienna do zliczania przetworzonych pakietów
-packet_count = 0
+        # Limit czasu (w sekundach), po którym IP zostaje usunięte (5 minut)
+        self.TIMEOUT = 300  
 
-def process_packet(packet):
-    """
-    Przetwarza pojedynczy pakiet, wykrywając skanowanie portów i usuwając nieaktywne IP.
+        # Próg skanowania – co najmniej 10 portów z jednego IP
+        self.SCAN_THRESHOLD = 10
 
-    :param packet: Słownik z informacjami o pakiecie (src_ip, dst_port).
-    """
-    current_time = time.time()  # Aktualny czas w sekundach od epoki UNIX
+        # Globalna zmienna do zliczania przetworzonych pakietów
+        self.packet_count = 0
 
-    # Usuwanie IP, które były nieaktywne przez dłuższy czas
-    inactive_ips = [ip for ip, last_time in last_seen.items() 
-                    if current_time - last_time > TIMEOUT]
-    for ip in inactive_ips:
-        del src_to_ports[ip]
-        del last_seen[ip]
-        if ip in port_scan_detected:
-            del port_scan_detected[ip]
+    def process_packet(self, packet):
+        print("PROCESSING PACKET")
+        """
+        Przetwarza pojedynczy pakiet, wykrywając skanowanie portów i usuwając nieaktywne IP.
 
-    # Przetwarzanie bieżącego pakietu
-    src_ip = packet["src_ip"]
-    dst_port = packet["dst_port"]
+        :param packet: Słownik z informacjami o pakiecie (src_ip, dst_port).
+        """
+        current_time = time.time()  # Aktualny czas w sekundach od epoki UNIX
 
-    # Aktualizacja czasu ostatniej aktywności
-    last_seen[src_ip] = current_time
+        # Usuwanie IP, które były nieaktywne przez dłuższy czas
+        inactive_ips = [ip for ip, last_time in self.last_seen.items() 
+                        if current_time - last_time > self.TIMEOUT]
+        for ip in inactive_ips:
+            del self.src_to_ports[ip]
+            del self.last_seen[ip]
+            if ip in self.port_scan_detected:
+                del self.port_scan_detected[ip]
 
-    # Dodajemy nowy port (jeśli jeszcze nie było go w zbiorze)
-    if dst_port not in src_to_ports[src_ip]:
-        src_to_ports[src_ip].add(dst_port)
+        # Przetwarzanie bieżącego pakietu
+        src_ip = packet['src_ip']
+        dst_port = packet["dst_port"]
 
-        # Sprawdzamy, czy osiągnęliśmy próg (SCAN_THRESHOLD).
-        if (len(src_to_ports[src_ip]) >= SCAN_THRESHOLD 
-                and not port_scan_detected[src_ip]):
-            print(f"Port scanning detected from {src_ip}: "
-                  f"scanned at least {len(src_to_ports[src_ip])} ports!")
-            port_scan_detected[src_ip] = True
+        # Aktualizacja czasu ostatniej aktywności
+        self.last_seen[src_ip] = current_time
 
-def monitor_pkts(pkt):
-    global packet_count
-    packet_count += 1  # zliczamy każdy przetworzony pakiet
+        # Dodajemy nowy port (jeśli jeszcze nie było go w zbiorze)
+        if dst_port not in self.src_to_ports[src_ip]:
+            self.src_to_ports[src_ip].add(dst_port)
 
-    if IP in pkt and TCP in pkt:
-        src_ip = pkt[IP].src
-        dst_ip = pkt[IP].dst
-        src_port = pkt[TCP].sport
-        dst_port = pkt[TCP].dport
+            # Sprawdzamy, czy osiągnęliśmy próg (SCAN_THRESHOLD).
+            if (len(self.src_to_ports[src_ip]) >= self.SCAN_THRESHOLD 
+                    and not self.port_scan_detected[src_ip]):
+                print(f"Port scanning detected from {src_ip}: "
+                    f"scanned at least {len(self.src_to_ports[src_ip])} ports!")
+                self.port_scan_detected[src_ip] = True
 
-        flags = pkt[TCP].flags  # to jest liczba, bitowo oznaczająca flagi
+    def monitor_pkts(self, pkt, end=False):
+        print(pkt)
+        self.packet_count += 1
+
+
+        src_ip = pkt.src_ip
+        dst_ip = pkt.dst_ip
+        src_port = pkt.src_port
+        dst_port = pkt.dst_port
+
+        # Convert the dictionary to a single hex value
 
         # Klucz identyfikujący połączenie
         connection_id = (src_ip, dst_ip, src_port, dst_port)
 
         # Mechanizm wykrywania handshake (SYN -> SYN+ACK -> ACK z danymi)
         # Flaga SYN to bit 0x02
-        if (flags & 0x02) and not (flags & 0x10):  # SYN bez ACK
-            tcp_connections[connection_id]["syn"] = True
+        if (pkt.syn) and not (pkt.ack):  # SYN bez ACK
+            self.tcp_connections[connection_id]["syn"] = True
 
         # Flaga SYN-ACK to 0x12 (dec 18)
-        if flags == 0x12:
-            tcp_connections[connection_id]["ack"] = True
+        if pkt.syn and pkt.ack:  # SYN z ACK
+            self.tcp_connections[connection_id]["ack"] = True
 
         # Flaga ACK (0x10) + payload > 0 -> mamy dane
-        if (flags & 0x10) and len(pkt[TCP].payload) > 0:
-            tcp_connections[connection_id]["data"] = True
+        if pkt.ack and len(pkt.ip_packet) > 0:
+            self.tcp_connections[connection_id]["data"] = True
 
         # Jeśli mamy SYN, SYN-ACK i ACK z danymi, uznajemy połączenie za zestawione
-        if (tcp_connections[connection_id]["syn"]
-            and tcp_connections[connection_id]["ack"]
-            and tcp_connections[connection_id]["data"]):
+        if (self.tcp_connections[connection_id]["syn"]
+            and self.tcp_connections[connection_id]["ack"]
+            and self.tcp_connections[connection_id]["data"]):
             print(f"Communication detected between {src_ip}:{src_port} "
-                  f"and {dst_ip}:{dst_port}")
-            del tcp_connections[connection_id]
+                f"and {dst_ip}:{dst_port}")
+            del self.tcp_connections[connection_id]
 
         # Uzupełniamy słownik danych dla funkcji process_packet
         packet_data = {"src_ip": src_ip, "dst_port": dst_port}
-        process_packet(packet_data)
+        self.process_packet(packet_data)
 
-def print_summary():
-    """
-    Funkcja wyświetlająca podsumowanie na koniec działania programu
-    (np. po naciśnięciu Ctrl+C).
-    """
-    print("\n=== SUMMARY ===")
-    print(f"Total processed packets : {packet_count}")
-    
-    # Liczba unikalnych IP (tylko te, co się pojawiły, nawet jeśli nie skanowały)
-    unique_ips = len(src_to_ports)
-    print(f"Unique source IPs       : {unique_ips}")
+    def print_summary(self):
+        """
+        Funkcja wyświetlająca podsumowanie na koniec działania programu
+        (np. po naciśnięciu Ctrl+C).
+        """
+        print("\n=== SUMMARY ===")
+        print(f"Total processed packets : {self.packet_count}")
+        
+        # Liczba unikalnych IP (tylko te, co się pojawiły, nawet jeśli nie skanowały)
+        unique_ips = len(self.src_to_ports)
+        print(f"Unique source IPs       : {unique_ips}")
 
-    # Liczba IP oznaczonych jako skanujące
-    scanning_ips_list = [ip for ip, scanned in port_scan_detected.items() if scanned]
-    print(f"IPs flagged for scanning: {len(scanning_ips_list)}")
+        # Liczba IP oznaczonych jako skanujące
+        scanning_ips_list = [ip for ip, scanned in self.port_scan_detected.items() if scanned]
+        print(f"IPs flagged for scanning: {len(scanning_ips_list)}")
 
-    # Wyświetlamy listę skanerów z przeskanowanymi portami
-    if scanning_ips_list:
-        print("\nList of IPs flagged as scanners and their scanned ports:")
-        for ip in scanning_ips_list:
-            # Dla pewności bierzemy listę przeskanowanych portów i sortujemy
-            ports_list = sorted(src_to_ports.get(ip, []))
-            print(f"  - {ip} -> scanned ports: {ports_list}")
-    else:
-        print("No scanners were detected.")
+        # Wyświetlamy listę skanerów z przeskanowanymi portami
+        if scanning_ips_list:
+            print("\nList of IPs flagged as scanners and their scanned ports:")
+            for ip in scanning_ips_list:
+                # Dla pewności bierzemy listę przeskanowanych portów i sortujemy
+                ports_list = sorted(self.src_to_ports.get(ip, []))
+                print(f"  - {ip} -> scanned ports: {ports_list}")
+        else:
+            print("No scanners were detected.")
 
-    print("=== END ===\n")
+        print("=== END ===\n")
 
 if __name__ == "__main__":
+
+    # Inicjalizujemy obiekt klasy RuleDetector
+    rule_detector = RuleDetector()
     try:
         print("Available interfaces:", get_if_list())
         print("Starting sniffing on interface: lo (loopback). Press Ctrl+C to stop.\n")
 
-        sniff(iface="lo", filter="ip", prn=monitor_pkts)
+        sniff(iface="lo", filter="ip", prn=rule_detector.monitor_pkts)
 
     except KeyboardInterrupt:
         print("\n[!] Stopped by user.")
     finally:
         # Wyświetlamy podsumowanie
-        print_summary()
+        rule_detector.print_summary()
