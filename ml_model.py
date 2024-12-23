@@ -178,7 +178,7 @@ class DecisionTreeClassifierWrapper:
         self.feature_columns = []
         
         malicious_df = NFStreamer(source="pcap/maliciousFINAL.pcap").to_pandas()
-        malicious_df2 = NFStreamer(source="zzz.pcap").to_pandas()
+        malicious_df2 = NFStreamer(source="pcap/zzz.pcap").to_pandas()
         malicious_df = pd.concat([malicious_df, malicious_df2])
 
         normal_df = NFStreamer(source="pcap/normalFINAL.pcap").to_pandas()
@@ -289,7 +289,6 @@ class DecisionTreeClassifierWrapper:
                 "bidirectional_first_seen_ms": row["bidirectional_first_seen_ms"],
                 "source": "ML"
             }
-            print(packet_info)
             result.append(packet_info)
         print("============ ML PODSUMOWANIE =============")
         print(f"Spośród {len(df_original)} przepływów, {len(result)} zostało zaklasyfikowanych jako złośliwe.")

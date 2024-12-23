@@ -238,7 +238,26 @@ def visualize_attack_timeline(MLresult, RuleResult, SigmaResult):
     plt.show()
 
 
-# def merge_ml_sigma(MLresult, SigmaResult):
+def merge_ml_sigma(MLresult, RuleResult, SigmaResult):
+    # Create a DataFrame from the combined results
+    combined_results = MLresult + RuleResult + SigmaResult
+    df = pd.DataFrame(combined_results)
+
+    # Group by src_ip and source, then count occurrences
+    grouped = df.groupby(['src_ip', 'source']).size().reset_index(name='count')
+
+    # Pivot the DataFrame to have sources as columns
+    pivoted = grouped.pivot(index='src_ip', columns='source', values='count').fillna(0)
+
+    # Plot the data
+    pivoted.plot(kind='bar', stacked=True, figsize=(12, 6), colormap='viridis')
+    plt.title('Detections by Source for Each src_ip')
+    plt.xlabel('Source IP')
+    plt.ylabel('Number of Detections')
+    plt.legend(title='Source')
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
 
     
 

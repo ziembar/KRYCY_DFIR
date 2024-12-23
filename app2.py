@@ -32,10 +32,11 @@ def main():
 
     # 1) Utwórz i uruchom obiekt SigRules
     sig_rules = SigRules(pcap_file=pcap_path, sigma_files=sigma_files)
-    analysis_results = sig_rules.analyze()
+    # analysis_results = sig_rules.analyze()
 
     tree = DecisionTreeClassifierWrapper()
     MLresult = tree.predict_packets(df_original)
+    tree.show_details()
 
     # 2) Utwórz obiekt RuleDetector z wybranymi parametrami
     detector = RuleDetector(
@@ -60,16 +61,19 @@ def main():
 
     # 4) Wyświetl wyniki z analizy SigRules
     print("\nDetected Logs (Sigma):")
-    print(json.dumps(analysis_results, indent=2))
-    SigmaResult = parse_sigma_for_visualization(print_summary(analysis_results))
-    RuleResult = ""
-
+    # print(json.dumps(analysis_results, indent=2))
+    # SigmaResult = parse_sigma_for_visualization(print_summary(analysis_results))
+    # RuleResult = [{}]
+    #todo: youRule zeby zwrocilo dane
     #Dodadkowe dane do testowania
    # additional_data = {'sigmaOne.yml': [{'timestamp': '1970-01-01T01:00:13.080597', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.810', 'destination_ip': '8.8.8.8'}, {'timestamp': '1970-01-01T01:00:13.080597', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.810', 'destination_ip': '8.8.8.8'},  {'timestamp': '1970-01-01T01:00:13.080597', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.8', 'destination_ip': '8.8.8.810'}, {'timestamp': '1970-01-01T01:00:13.080597', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.810', 'destination_ip': '8.8.8.8'},  {'timestamp': '1970-01-01T01:00:13.080597', 'query': 'api.telegram.org', 'source_ip': '8.8.8.8', 'destination_ip': '8.8.8.810'}]}
    # SigmaResult = print_summary(additional_data)
-    visualisations.visualize_attack_timeline(MLresult, RuleResult, SigmaResult)
 
-    visualisations.merge_ml_sigma(MLresult, SigmaResult)
+    #todo: wkleic ladny result
+    # visualisations.visualize_attack_timeline(MLresult, RuleResult, SigmaResult)
+
+    # #todo: wkleic ladny result
+    # visualisations.merge_ml_sigma(MLresult,RuleResult, SigmaResult)
 
 if __name__ == "__main__":
     main()
