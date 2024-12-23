@@ -6,6 +6,6 @@ logsource:
     category: dns
 detection:
     selection:
-        query: 'www.google.cz'
+        query: 'api.telegram.org'
     condition: selection
 level: medium

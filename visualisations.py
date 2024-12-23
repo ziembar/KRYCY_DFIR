@@ -237,6 +237,9 @@ def visualize_attack_timeline(MLresult, RuleResult, SigmaResult):
     plt.tight_layout()
     plt.show()
 
+
+# def merge_ml_sigma(MLresult, SigmaResult):
+
     
 
 

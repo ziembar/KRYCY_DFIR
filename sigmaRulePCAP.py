@@ -46,13 +46,13 @@ class SigRules:
             try:
                 if hasattr(packet.dns, 'qry_name'):
                     query_name = packet.dns.qry_name.lower()
-                    print(query_name)
                     if any(criteria in query_name for criteria in criteria_list):
                         detected_logs.append({
                             "timestamp": packet.sniff_time.isoformat(),
                             "query": query_name,
                             "source_ip": packet.ip.src,
-                            "destination_ip": packet.ip.dst
+                            "destination_ip": packet.ip.dst,
+                            "source": "sigma"
                         })
             except AttributeError:
                 continue
@@ -160,5 +160,5 @@ if __name__ == "__main__":
     print(json.dumps(analysis_results, indent=2))
     print_summary(analysis_results)
     print(analysis_results)
-    additional_data = {'sigmaOne.yml': [{'timestamp': '2024-12-21T01:08:19.253461', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.810', 'destination_ip': '8.8.8.8'}, {'timestamp': '2024-12-21T01:08:19.253503', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.810', 'destination_ip': '8.8.8.8'}, {'timestamp': '2024-12-21T01:08:19.339807', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.8', 'destination_ip': '8.8.8.810'}, {'timestamp': '2024-12-21T01:08:19.379514', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.8', 'destination_ip': '8.8.8.810'}, {'timestamp': '2024-12-21T01:08:21.682856', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.810', 'destination_ip': '8.8.8.8'}, {'timestamp': '2024-12-21T01:08:21.682899', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.810', 'destination_ip': '8.8.8.8'}, {'timestamp': '2024-12-21T01:08:21.723257', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.8', 'destination_ip': '8.8.8.810'}, {'timestamp': '2024-12-21T01:08:21.729974', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.8', 'destination_ip': '8.8.8.810'}], 'sigmaTwo.yml': [{'timestamp': '2024-12-21T01:08:03.640043', 'query': 'api.telegram.org', 'source_ip': '8.8.8.810', 'destination_ip': '8.8.8.8'}, {'timestamp': '2024-12-21T01:08:03.640129', 'query': 'api.telegram.org', 'source_ip': '8.8.8.810', 'destination_ip': '8.8.8.8'}, {'timestamp': '2024-12-21T01:08:03.678984', 'query': 'api.telegram.org', 'source_ip': '8.8.8.8', 'destination_ip': '8.8.8.810'}, {'timestamp': '2024-12-21T01:08:03.701756', 'query': 'api.telegram.org', 'source_ip': '8.8.8.8', 'destination_ip': '8.8.8.810'}]}
-    print_summary(additional_data)
+    # additional_data = {'sigmaOne.yml': [{'timestamp': '2024-12-21T01:08:19.253461', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.810', 'destination_ip': '8.8.8.8'}, {'timestamp': '2024-12-21T01:08:19.253503', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.810', 'destination_ip': '8.8.8.8'}, {'timestamp': '2024-12-21T01:08:19.339807', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.8', 'destination_ip': '8.8.8.810'}, {'timestamp': '2024-12-21T01:08:19.379514', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.8', 'destination_ip': '8.8.8.810'}, {'timestamp': '2024-12-21T01:08:21.682856', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.810', 'destination_ip': '8.8.8.8'}, {'timestamp': '2024-12-21T01:08:21.682899', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.810', 'destination_ip': '8.8.8.8'}, {'timestamp': '2024-12-21T01:08:21.723257', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.8', 'destination_ip': '8.8.8.810'}, {'timestamp': '2024-12-21T01:08:21.729974', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.8', 'destination_ip': '8.8.8.810'}], 'sigmaTwo.yml': [{'timestamp': '2024-12-21T01:08:03.640043', 'query': 'api.telegram.org', 'source_ip': '8.8.8.810', 'destination_ip': '8.8.8.8'}, {'timestamp': '2024-12-21T01:08:03.640129', 'query': 'api.telegram.org', 'source_ip': '8.8.8.810', 'destination_ip': '8.8.8.8'}, {'timestamp': '2024-12-21T01:08:03.678984', 'query': 'api.telegram.org', 'source_ip': '8.8.8.8', 'destination_ip': '8.8.8.810'}, {'timestamp': '2024-12-21T01:08:03.701756', 'query': 'api.telegram.org', 'source_ip': '8.8.8.8', 'destination_ip': '8.8.8.810'}]}
+    # print_summary(additional_data)

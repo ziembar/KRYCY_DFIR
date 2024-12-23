@@ -1,10 +1,10 @@
 [
   {
     "rule": "sigmaOne.yml",
-    "timestamp": "1970-01-01T01:01:49.187607",
-    "query": "cdn147.hostinguploadsite.com",
-    "source_ip": "10.0.2.115",
-    "destination_ip": "8.8.8.8",
+    "timestamp": "2024-12-21T01:08:19.253461",
+    "query": "s1.tor-gateways.de",
+    "source_ip": "192.168.1.110",
+    "destination_ip": "192.168.1.1",
     "location": {
       "kraj": "United States",
       "miasto": "Ashburn",
@@ -13,10 +13,82 @@
   },
   {
     "rule": "sigmaOne.yml",
-    "timestamp": "1970-01-01T01:01:49.319285",
-    "query": "cdn147.hostinguploadsite.com",
-    "source_ip": "8.8.8.8",
-    "destination_ip": "10.0.2.115",
+    "timestamp": "2024-12-21T01:08:19.253503",
+    "query": "s1.tor-gateways.de",
+    "source_ip": "192.168.1.110",
+    "destination_ip": "192.168.1.1",
+    "location": {
+      "kraj": "United States",
+      "miasto": "Ashburn",
+      "isp": "Google LLC"
+    }
+  },
+  {
+    "rule": "sigmaOne.yml",
+    "timestamp": "2024-12-21T01:08:19.339807",
+    "query": "s1.tor-gateways.de",
+    "source_ip": "192.168.1.1",
+    "destination_ip": "192.168.1.110",
+    "location": {
+      "kraj": "United States",
+      "miasto": "Ashburn",
+      "isp": "Google LLC"
+    }
+  },
+  {
+    "rule": "sigmaOne.yml",
+    "timestamp": "2024-12-21T01:08:19.379514",
+    "query": "s1.tor-gateways.de",
+    "source_ip": "192.168.1.1",
+    "destination_ip": "192.168.1.110",
+    "location": {
+      "kraj": "United States",
+      "miasto": "Ashburn",
+      "isp": "Google LLC"
+    }
+  },
+  {
+    "rule": "sigmaOne.yml",
+    "timestamp": "2024-12-21T01:08:21.682856",
+    "query": "s1.tor-gateways.de",
+    "source_ip": "192.168.1.110",
+    "destination_ip": "192.168.1.1",
+    "location": {
+      "kraj": "United States",
+      "miasto": "Ashburn",
+      "isp": "Google LLC"
+    }
+  },
+  {
+    "rule": "sigmaOne.yml",
+    "timestamp": "2024-12-21T01:08:21.682899",
+    "query": "s1.tor-gateways.de",
+    "source_ip": "192.168.1.110",
+    "destination_ip": "192.168.1.1",
+    "location": {
+      "kraj": "United States",
+      "miasto": "Ashburn",
+      "isp": "Google LLC"
+    }
+  },
+  {
+    "rule": "sigmaOne.yml",
+    "timestamp": "2024-12-21T01:08:21.723257",
+    "query": "s1.tor-gateways.de",
+    "source_ip": "192.168.1.1",
+    "destination_ip": "192.168.1.110",
+    "location": {
+      "kraj": "United States",
+      "miasto": "Ashburn",
+      "isp": "Google LLC"
+    }
+  },
+  {
+    "rule": "sigmaOne.yml",
+    "timestamp": "2024-12-21T01:08:21.729974",
+    "query": "s1.tor-gateways.de",
+    "source_ip": "192.168.1.1",
+    "destination_ip": "192.168.1.110",
     "location": {
       "kraj": "United States",
       "miasto": "Ashburn",
@@ -25,10 +97,10 @@
   },
   {
     "rule": "sigmaTwo.yml",
-    "timestamp": "1970-01-01T01:01:48.504595",
-    "query": "www.google.cz",
-    "source_ip": "10.0.2.115",
-    "destination_ip": "8.8.8.8",
+    "timestamp": "2024-12-21T01:08:03.640043",
+    "query": "api.telegram.org",
+    "source_ip": "192.168.1.110",
+    "destination_ip": "192.168.1.1",
     "location": {
       "kraj": "United States",
       "miasto": "Ashburn",
@@ -37,10 +109,34 @@
   },
   {
     "rule": "sigmaTwo.yml",
-    "timestamp": "1970-01-01T01:01:48.517076",
-    "query": "www.google.cz",
-    "source_ip": "8.8.8.8",
-    "destination_ip": "10.0.2.115",
+    "timestamp": "2024-12-21T01:08:03.640129",
+    "query": "api.telegram.org",
+    "source_ip": "192.168.1.110",
+    "destination_ip": "192.168.1.1",
+    "location": {
+      "kraj": "United States",
+      "miasto": "Ashburn",
+      "isp": "Google LLC"
+    }
+  },
+  {
+    "rule": "sigmaTwo.yml",
+    "timestamp": "2024-12-21T01:08:03.678984",
+    "query": "api.telegram.org",
+    "source_ip": "192.168.1.1",
+    "destination_ip": "192.168.1.110",
+    "location": {
+      "kraj": "United States",
+      "miasto": "Ashburn",
+      "isp": "Google LLC"
+    }
+  },
+  {
+    "rule": "sigmaTwo.yml",
+    "timestamp": "2024-12-21T01:08:03.701756",
+    "query": "api.telegram.org",
+    "source_ip": "192.168.1.1",
+    "destination_ip": "192.168.1.110",
     "location": {
       "kraj": "United States",
       "miasto": "Ashburn",
