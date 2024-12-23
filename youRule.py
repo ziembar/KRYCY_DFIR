@@ -296,7 +296,7 @@ class RuleDetector:
                     "timestamp": conn_info.get("start_time", "[Unknown time]"),
                     "source_ip": src_ip,
                     "destination_ip": dst_ip,
-                    "scanned_ports": sorted(list(self.src_to_ports[src_ip])),
+                    "scanned_ports": ", ".join(map(str, sorted(self.src_to_ports[src_ip]))),
                     "flow_bytes": conn_info["flow_bytes"],
                     # "query" to lista powodów oznaczenia jako niebezpieczne
                     "query": reasons
