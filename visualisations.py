@@ -7,7 +7,6 @@ import matplotlib.pyplot as plt
 from core import import_pcap, clean_data, filter_ipv6
 from datetime import datetime
 
-
 def generate_flow_statistics(dataset):
     plt.figure(figsize=(14, 10))
 
@@ -258,9 +257,7 @@ def merge_ml_sigma(MLresult, RuleResult, SigmaResult):
     plt.grid(True)
     plt.tight_layout()
     plt.show()
-
     
-
 
 
 if __name__ == "__main__":
