@@ -1,0 +1,50 @@
+[
+  {
+    "rule": "sigmaOne.yml",
+    "timestamp": "1970-01-01T01:01:49.187607",
+    "query": "cdn147.hostinguploadsite.com",
+    "source_ip": "10.0.2.115",
+    "destination_ip": "8.8.8.8",
+    "location": {
+      "kraj": "United States",
+      "miasto": "Ashburn",
+      "isp": "Google LLC"
+    }
+  },
+  {
+    "rule": "sigmaOne.yml",
+    "timestamp": "1970-01-01T01:01:49.319285",
+    "query": "cdn147.hostinguploadsite.com",
+    "source_ip": "8.8.8.8",
+    "destination_ip": "10.0.2.115",
+    "location": {
+      "kraj": "United States",
+      "miasto": "Ashburn",
+      "isp": "Google LLC"
+    }
+  },
+  {
+    "rule": "sigmaTwo.yml",
+    "timestamp": "1970-01-01T01:01:48.504595",
+    "query": "www.google.cz",
+    "source_ip": "10.0.2.115",
+    "destination_ip": "8.8.8.8",
+    "location": {
+      "kraj": "United States",
+      "miasto": "Ashburn",
+      "isp": "Google LLC"
+    }
+  },
+  {
+    "rule": "sigmaTwo.yml",
+    "timestamp": "1970-01-01T01:01:48.517076",
+    "query": "www.google.cz",
+    "source_ip": "8.8.8.8",
+    "destination_ip": "10.0.2.115",
+    "location": {
+      "kraj": "United States",
+      "miasto": "Ashburn",
+      "isp": "Google LLC"
+    }
+  }
+]

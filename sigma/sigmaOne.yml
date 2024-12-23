@@ -8,7 +8,7 @@ logsource:
 detection:
     selection:
         query:
-            - 'tor2web.org'
+            - 'cdn147.hostinguploadsite.com'
             - 'tor2web.com'
             - 'torlink.co'
             - 'onion.to'

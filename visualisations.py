@@ -5,6 +5,8 @@ import numpy as np
 import networkx as nx
 import matplotlib.pyplot as plt
 from core import import_pcap, clean_data, filter_ipv6
+from datetime import datetime
+
 
 def generate_flow_statistics(dataset):
     plt.figure(figsize=(14, 10))
@@ -171,6 +173,74 @@ def ML_summary(packet_info_list):
     plt.title('Histogram of Bidirectional Duration')
     plt.xlabel('Duration (ms)')
     plt.ylabel('Frequency')
+    plt.show()
+
+def visualize_attack_timeline(MLresult, RuleResult, SigmaResult):
+
+    rows = []
+
+    # 1) Dane z silnika ML (czerwony) – ms epoki -> datetime (UTC)
+    for item in MLresult:
+        dt = datetime.utcfromtimestamp(item["bidirectional_first_seen_ms"] / 1000.0)
+        rows.append({
+            "timestamp": dt,
+            "source": "ML"
+        })
+
+    # 2) Dane z silnika reguł (niebieski) – 'timestamp' (ISO8601)
+    for item in RuleResult:
+        dt = datetime.fromisoformat(item["timestamp"])
+        rows.append({
+            "timestamp": dt,
+            "source": "Rule"
+        })
+
+    # 3) Dane z reguł Sigma (zielony) – 'timestamp' (ISO8601)
+    for item in SigmaResult:
+        dt = datetime.fromisoformat(item["timestamp"])
+        rows.append({
+            "timestamp": dt,
+            "source": "Sigma"
+        })
+
+    # Jeżeli brak danych, przerywamy
+    if not rows:
+        print("[INFO] Brak danych do wizualizacji.")
+        return
+
+    # Konwersja do DataFrame
+    df = pd.DataFrame(rows)
+    # Zaokrąglamy timestamp do sekund (opcjonalnie)
+    df["timestamp"] = df["timestamp"].dt.floor("s")
+
+    # Grupujemy po (timestamp, source), liczymy liczbę zdarzeń
+    grouped = df.groupby(["timestamp", "source"]).size().reset_index(name="count")
+
+    # Pivot: kolumny: ML/Rule/Sigma, index: timestamp, values: count
+    pivoted = grouped.pivot(index="timestamp", columns="source", values="count").fillna(0)
+
+    # Wykres liniowy
+    fig, ax = plt.subplots(figsize=(12, 6))
+
+    # Jeśli kolumny istnieją, rysujemy
+    if "ML" in pivoted.columns:
+        ax.plot(pivoted.index, pivoted["ML"], color="red", marker="o", label="ML")
+    if "Rule" in pivoted.columns:
+        ax.plot(pivoted.index, pivoted["Rule"], color="blue", marker="o", label="Rule")
+    if "Sigma" in pivoted.columns:
+        ax.plot(pivoted.index, pivoted["Sigma"], color="green", marker="o", label="Sigma")
+
+    ax.set_title("Attacks Over Time by Source (Line Chart)")
+    ax.set_xlabel("Timestamp")
+    ax.set_ylabel("Number of Attacks")
+
+    # Zawężenie osi X do [pierwsza_detekcja, ostatnia_detekcja]
+    ax.set_xlim(pivoted.index.min(), pivoted.index.max())
+
+    ax.legend(title="Source")
+    ax.grid(True)
+    fig.autofmt_xdate()  # automatycznie obraca etykiety osi X
+    plt.tight_layout()
     plt.show()
 
     

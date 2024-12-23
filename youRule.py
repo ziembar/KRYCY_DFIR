@@ -313,6 +313,7 @@ class RuleDetector:
             print("No dangerous TCP connections detected.")
 
         print("=== END ===\n")
+        return dangerous_connections_list
 
 
 

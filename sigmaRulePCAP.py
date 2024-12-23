@@ -2,7 +2,7 @@ import yaml
 import pyshark
 import json
 from Enrichment_Service import Enrichment
-
+import json
 
 class SigRules:
     """
@@ -45,6 +45,7 @@ class SigRules:
             try:
                 if hasattr(packet.dns, 'qry_name'):
                     query_name = packet.dns.qry_name.lower()
+                    print(query_name)
                     if any(criteria in query_name for criteria in criteria_list):
                         detected_logs.append({
                             "timestamp": packet.sniff_time.isoformat(),
@@ -70,22 +71,47 @@ class SigRules:
         return results
 
 def print_summary(analysis_results):
-    enrich = Enrichment()
     """
     Wyświetla szczegółowe informacje o dopasowaniach i podsumowuje wyniki analizy.
+    Zapisuje je do pliku JSON, a także zwraca w formacie listy słowników.
     """
+    enrich = Enrichment()
+
     total_matches = 0
+    matches_for_json = []
+
     print("\n=== DETAILED MATCHES ===")
     for rule_name, logs in analysis_results.items():
         print(f"\nRule: {rule_name}")
         if logs:
             for match in logs:
+                # Wyświetlenie na konsoli
                 print(f"  - Timestamp     : {match['timestamp']}")
                 print(f"    Query         : {match['query']}")
                 print(f"    Source IP     : {match['source_ip']}")
                 print(f"    Destination IP: {match['destination_ip']}")
-                location = enrich.get_ip_location(match['destination_ip'])
+
                 total_matches += 1
+
+                # Przygotowanie obiektu do JSON-a / return
+                record = {
+                    "rule": rule_name,
+                    "timestamp": match["timestamp"],
+                    "query": match["query"],
+                    "source_ip": match["source_ip"],
+                    "destination_ip": match["destination_ip"]
+                }
+
+                # (Opcjonalnie) dołożenie danych lokalizacyjnych
+                location = enrich.get_ip_location(match['destination_ip'])
+                if location:
+                    record["location"] = {
+                        "kraj": location.get("kraj", "N/A"),
+                        "miasto": location.get("miasto", "N/A"),
+                        "isp": location.get("dostawca_usług_internetowych", "N/A")
+                    }
+
+                matches_for_json.append(record)
         else:
             print("  (No matches found for this rule)")
 
@@ -94,9 +120,32 @@ def print_summary(analysis_results):
     print(f"Total matches found: {total_matches}")
     print("=== END ===\n")
 
+    # Zapis do pliku JSON (o ile mamy jakiekolwiek dopasowania)
+    if matches_for_json:
+        with open("analysisResults.json", "w") as f:
+            json.dump(matches_for_json, f, indent=2)
+        print(f"[INFO] Zapisano {len(matches_for_json)} dopasowań do pliku 'analysisResults.json'.")
+    else:
+        print("[INFO] Brak dopasowań – nie tworzę pliku 'analysisResults.json'.")
+
+    # Zwracamy listę słowników (jednolity format)
+    return matches_for_json
+
+def parse_sigma_for_visualization(unified_sigma_list):
+    results = []
+    for item in unified_sigma_list:
+        record = {
+            "timestamp": item["timestamp"],  # tak jak jest
+            "source": "Sigma"
+            # Reszta atrybutów jest nam w sumie zbędna do samego wykresu,
+            # bo visualize_attack_timeline i tak wykorzystuje tylko 'timestamp' i 'source'.
+        }
+        results.append(record)
+    return results
+
 
 if __name__ == "__main__":
-    pcap_file = "zzz.pcap"
+    pcap_file = "normal_traffic.pcap"
     sigma_files = [
         "sigma/sigmaOne.yml",
         "sigma/sigmaTwo.yml"
