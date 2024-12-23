@@ -10,7 +10,7 @@ def generate_flow_statistics(dataset):
     plt.figure(figsize=(14, 10))
 
     # 1. Plot of flow duration
-    plt.subplot(3, 2, 1)
+    plt.subplot(3, 1, 3)
     plt.plot(dataset['dst2src_duration_ms'], color='blue')
     plt.title('Flow Duration Plot')
     plt.xlabel('Index')
@@ -47,13 +47,14 @@ def generate_flow_statistics(dataset):
     plt.grid(True)
 
     # 6. Scatter plot of Source vs. Destination Port
-    plt.subplot(3, 2, 6)
+    plt.subplot(3, 2, 1)
     plt.scatter(dataset['dst_port'], dataset['src_port'], alpha=0.5, marker='.', color='brown')
     plt.title('Source vs. Destination Port')
     plt.xlabel('Destination Port')
     plt.ylabel('Source Port')
     plt.grid(True)
 
+    plt.tight_layout(pad=3.0)
     plt.show()
 
 def generate_network_graph(dataset):
@@ -137,43 +138,34 @@ def show_correlation(data):
 
     plt.show()
 
-def ML_summary(packet_info_list):
-    # Convert list of dicts to DataFrame
-    df = pd.DataFrame(packet_info_list)
-
-    # Plot of source IP addresses
-    plt.figure(figsize=(12, 6))
-    sns.countplot(y='src_ip', data=df, order=df['src_ip'].value_counts().index)
-    plt.title('Source IP Addresses')
-    plt.xlabel('Count')
-    plt.ylabel('Source IP')
-    plt.show()
+def ML_summary(df):
+    fig, axes = plt.subplots(2, 2, figsize=(10, 10))  # Reduced figure size
+    sns.countplot(y='src_ip', data=df, order=df['src_ip'].value_counts().index, ax=axes[0, 0])
+    axes[0, 0].set_title('Source IP Addresses')
+    axes[0, 0].set_xlabel('Count')
+    axes[0, 0].set_ylabel('Source IP')
 
     # Plot of destination ports
-    plt.figure(figsize=(12, 6))
-    sns.countplot(y='dst_port', data=df, order=df['dst_port'].value_counts().index)
-    plt.title('Destination Ports')
-    plt.xlabel('Count')
-    plt.ylabel('Destination Port')
-    plt.show()
+    sns.countplot(y='dst_port', data=df, order=df['dst_port'].value_counts().index, ax=axes[0, 1])
+    axes[0, 1].set_title('Destination Ports')
+    axes[0, 1].set_xlabel('Count')
+    axes[0, 1].set_ylabel('Destination Port')
 
     # Plot of protocols
-    plt.figure(figsize=(12, 6))
-    sns.countplot(y='protocol', data=df, order=df['protocol'].value_counts().index)
-    plt.title('Protocols')
-    plt.xlabel('Count')
-    plt.ylabel('Protocol')
-    plt.show()
+    sns.countplot(y='protocol', data=df, order=df['protocol'].value_counts().index, ax=axes[1, 0])
+    axes[1, 0].set_title('Protocols')
+    axes[1, 0].set_xlabel('Count')
+    axes[1, 0].set_ylabel('Protocol')
 
     # Histogram of bidirectional duration
-    plt.figure(figsize=(12, 6))
-    sns.histplot(df['bidirectional_duration_ms'], bins=30, kde=True)
-    plt.title('Histogram of Bidirectional Duration')
-    plt.xlabel('Duration (ms)')
-    plt.ylabel('Frequency')
-    plt.show()
+    sns.histplot(df['bidirectional_duration_ms'], bins=30, kde=True, ax=axes[1, 1])
+    axes[1, 1].set_title('Histogram of Bidirectional Duration')
+    axes[1, 1].set_xlabel('Duration (ms)')
+    axes[1, 1].set_ylabel('Frequency')
 
-    
+
+    plt.tight_layout(pad=3.0)
+    plt.show()
 
 
 

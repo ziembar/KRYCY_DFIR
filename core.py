@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 
 
 def import_pcap(filename):
-
     warnings.filterwarnings("ignore")
     streamer = NFStreamer(source=filename)
     return streamer.to_pandas()

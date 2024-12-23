@@ -7,6 +7,7 @@ from sklearn.metrics import confusion_matrix, f1_score, precision_score, accurac
 from sklearn.model_selection import train_test_split
 from sklearn.tree import plot_tree
 from nfstream import NFStreamer
+from Enrichment_Service import get_ip_location
 
 import visualisations
 
@@ -177,6 +178,9 @@ class DecisionTreeClassifierWrapper:
         self.feature_columns = []
         
         malicious_df = NFStreamer(source="pcap/maliciousFINAL.pcap").to_pandas()
+        malicious_df2 = NFStreamer(source="zzz.pcap").to_pandas()
+        malicious_df = pd.concat([malicious_df, malicious_df2])
+
         normal_df = NFStreamer(source="pcap/normalFINAL.pcap").to_pandas()
 
         malicious_df["label"] = 1
@@ -186,7 +190,7 @@ class DecisionTreeClassifierWrapper:
 
         df = self.clean_dataframe(df)
 
-        feature_columns = [col for col in df.columns if col not in ["client_fingerprint", "expiration_id","label", "timestamp", "id", "src_ip", "dst_ip", "src_mac", "dst_mac"]]
+        feature_columns = [col for col in df.columns if col not in ["client_fingerprint", "expiration_id","label", "id", "src_ip", "dst_ip", "src_mac", "dst_mac"]]
         X = df[feature_columns]
         y = df["label"]
         self.train(X, y)
@@ -259,7 +263,6 @@ class DecisionTreeClassifierWrapper:
     def predict_packets(self, df_original):
         df = df_original.copy()
 
-
         for column in df.columns:
             if df[column].dtype == 'object':
                 df[column] = pd.to_numeric(df[column], errors='coerce')
@@ -268,6 +271,12 @@ class DecisionTreeClassifierWrapper:
         
         predictions = self.model.predict(df)
         df = df_original.iloc[predictions == 1]
+
+        
+        df['protocol'] = df['protocol'].map(protocols)
+
+        visualisations.ML_summary(df)
+
         result = []
         for _, row in df.iterrows():
             packet_info = {
@@ -280,11 +289,11 @@ class DecisionTreeClassifierWrapper:
                 "bidirectional_first_seen_ms": row["bidirectional_first_seen_ms"],
                 "source": "ML"
             }
+            print(packet_info)
             result.append(packet_info)
         print("============ ML PODSUMOWANIE =============")
-        print(f"Spośród {len(df_original)} pakietów, {len(result)} zostało zaklasyfikowanych jako złośliwe.")
+        print(f"Spośród {len(df_original)} przepływów, {len(result)} zostało zaklasyfikowanych jako złośliwe.")
         print(f"Połączenia {len(df['src_ip'].unique())} adresów IP zostały zaklasyfikowane jako złośliwe.")
-        visualisations.ML_summary(result)
 
         return result
 
