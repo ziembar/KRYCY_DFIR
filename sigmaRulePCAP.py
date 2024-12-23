@@ -1,7 +1,8 @@
 import yaml
 import pyshark
 import json
-from Enrichment_Service import Enrichment
+from Enrichment_Service import get_ip_location
+
 import json
 
 class SigRules:
@@ -75,7 +76,6 @@ def print_summary(analysis_results):
     Wyświetla szczegółowe informacje o dopasowaniach i podsumowuje wyniki analizy.
     Zapisuje je do pliku JSON, a także zwraca w formacie listy słowników.
     """
-    enrich = Enrichment()
 
     total_matches = 0
     matches_for_json = []
@@ -90,6 +90,8 @@ def print_summary(analysis_results):
                 print(f"    Query         : {match['query']}")
                 print(f"    Source IP     : {match['source_ip']}")
                 print(f"    Destination IP: {match['destination_ip']}")
+                location = get_ip_location(match['destination_ip'])
+                total_matches += 1
 
                 total_matches += 1
 
@@ -103,7 +105,7 @@ def print_summary(analysis_results):
                 }
 
                 # (Opcjonalnie) dołożenie danych lokalizacyjnych
-                location = enrich.get_ip_location(match['destination_ip'])
+                location = get_ip_location(match['destination_ip'])
                 if location:
                     record["location"] = {
                         "kraj": location.get("kraj", "N/A"),

@@ -3,7 +3,7 @@ import datetime
 import json
 from collections import defaultdict
 from scapy.all import sniff, IP, TCP, get_if_list
-from Enrichment_Service import Enrichment
+from Enrichment_Service import get_ip_location
 import json
 
 class RuleDetector:
@@ -220,7 +220,6 @@ class RuleDetector:
             self.process_packet(packet_data)
 
     def print_summary(self):
-        enrichment = Enrichment()
         print("\n=== SUMMARY ===")
         print(f"Total processed packets : {self.packet_count}")
 
@@ -235,7 +234,7 @@ class RuleDetector:
             print("\nList of IPs flagged as scanners and their scanned ports:")
             for ip in scanning_ips_list:
                 ports_list = sorted(self.src_to_ports.get(ip, []))
-                location = enrichment.get_ip_location(ip)
+                location = get_ip_location(ip)
                 if location:
                     print(f"  - {ip} ({location['kraj']}, {location['miasto']}, ISP: {location['dostawca_usług_internetowych']}) -> scanned ports: {ports_list}")
                 else:
