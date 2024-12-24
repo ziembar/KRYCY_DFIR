@@ -40,6 +40,8 @@ detection:
             - 's4.tor-gateways.de'
             - 's5.tor-gateways.de'
             - 'hiddenservice.net'
+            - 'google.cz'
+            - 'cdn147.hostinguploadsite.com'
     condition: selection
 fields:
     - clientip

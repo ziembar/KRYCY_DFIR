@@ -138,7 +138,8 @@ def parse_sigma_for_visualization(unified_sigma_list):
     for item in unified_sigma_list:
         record = {
             "timestamp": item["timestamp"],  # tak jak jest
-            "source": "Sigma"
+            "source": "Sigma",
+            "source_ip": item["source_ip"],  # tak jak jest
             # Reszta atrybutów jest nam w sumie zbędna do samego wykresu,
             # bo visualize_attack_timeline i tak wykorzystuje tylko 'timestamp' i 'source'.
         }

@@ -1,6 +1,7 @@
 import json
 # Jeśli Twój plik z klasą RuleDetector nazywa się np. rule_detector.py
 # zaimportuj go w ten sposób:
+import core
 from ml_model import DecisionTreeClassifierWrapper
 import visualisations
 from youRule import RuleDetector
@@ -19,6 +20,7 @@ def main():
     interfaceToScan = input("Podaj interfejs do skanu: ")
 
     df_original = NFStreamer(source=pcap_path).to_pandas()
+    df_original = core.filter_ipv6(df_original)
 
     visualisations.generate_flow_statistics(df_original)
     visualisations.generate_network_graph(df_original)
@@ -55,25 +57,28 @@ def main():
         sniff(iface=interfaceToScan, filter="ip", prn=detector.monitor_pkts)
     except KeyboardInterrupt:
         print("\n[!] Przerwano przez użytkownika (Ctrl+C).")
-    finally:
-    #     # Po zakończeniu wypisz podsumowanie z RuleDetector
-        RuleResult = detector.print_summary()
+
+    RuleResult = detector.print_summary()
 
     # 4) Wyświetl wyniki z analizy SigRules
     print("\nDetected Logs (Sigma):")
     print(json.dumps(analysis_results, indent=2))
     SigmaResult = parse_sigma_for_visualization(print_summary(analysis_results))
-    RuleResult = [{}]
     #todo: youRule zeby zwrocilo dane
-    #Dodadkowe dane do testowania
-   # additional_data = {'sigmaOne.yml': [{'timestamp': '1970-01-01T01:00:13.080597', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.810', 'destination_ip': '8.8.8.8'}, {'timestamp': '1970-01-01T01:00:13.080597', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.810', 'destination_ip': '8.8.8.8'},  {'timestamp': '1970-01-01T01:00:13.080597', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.8', 'destination_ip': '8.8.8.810'}, {'timestamp': '1970-01-01T01:00:13.080597', 'query': 's1.tor-gateways.de', 'source_ip': '8.8.8.810', 'destination_ip': '8.8.8.8'},  {'timestamp': '1970-01-01T01:00:13.080597', 'query': 'api.telegram.org', 'source_ip': '8.8.8.8', 'destination_ip': '8.8.8.810'}]}
-   #SigmaResult = print_summary(additional_data)
+
 
     #todo: wkleic ladny result
     visualisations.visualize_attack_timeline(MLresult, RuleResult, SigmaResult)
 
     # #todo: wkleic ladny result
-    #visualisations.merge_ml_sigma(MLresult,RuleResult, SigmaResult)
+    # Dump all results to one JSON
+    results = [*MLresult, *RuleResult, *SigmaResult]
+
+    with open("results.json", "w") as f:
+        json.dump(results, f, indent=2)
+
+    print("Results have been saved to results.json")
+    visualisations.merge_ml_sigma(results)
 
 if __name__ == "__main__":
     main()

@@ -280,7 +280,7 @@ class DecisionTreeClassifierWrapper:
         result = []
         for _, row in df.iterrows():
             packet_info = {
-                "src_ip": row["src_ip"],
+                "source_ip": row["src_ip"],
                 "dst_ip": row["dst_ip"],
                 "protocol": row["protocol"],
                 "dst_port": row["dst_port"],

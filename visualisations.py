@@ -237,27 +237,29 @@ def visualize_attack_timeline(MLresult, RuleResult, SigmaResult):
     plt.show()
 
 
-def merge_ml_sigma(MLresult, RuleResult, SigmaResult):
-    # Create a DataFrame from the combined results
-    combined_results = MLresult + RuleResult + SigmaResult
-    df = pd.DataFrame(combined_results)
+def merge_ml_sigma(results):
+    # Convert lists of dictionaries to DataFrames
+    combined_results = pd.DataFrame(results)
 
-    # Group by src_ip and source, then count occurrences
-    grouped = df.groupby(['src_ip', 'source']).size().reset_index(name='count')
+    # Ensure the DataFrame has the necessary columns
+    if not all(col in combined_results.columns for col in ['source_ip', 'source']):
+        raise ValueError("Input data must have 'source_ip' and 'source' columns")
 
-    # Pivot the DataFrame to have sources as columns
-    pivoted = grouped.pivot(index='src_ip', columns='source', values='count').fillna(0)
+    # Group by source_ip and source, then count occurrences
+    grouped = combined_results.groupby(['source_ip', 'source']).size().reset_index(name='count')
+
+    # Pivot the DataFrame to have sources as columns, filling missing values with 0
+    pivoted = grouped.pivot(index='source_ip', columns='source', values='count').fillna(0)
 
     # Plot the data
     pivoted.plot(kind='bar', stacked=True, figsize=(12, 6), colormap='viridis')
-    plt.title('Detections by Source for Each src_ip')
+    plt.title('Detections by Source for Each source_ip')
     plt.xlabel('Source IP')
     plt.ylabel('Number of Detections')
     plt.legend(title='Source')
-    plt.grid(True)
+    plt.grid(True, axis='y', linestyle='--', alpha=0.7)
     plt.tight_layout()
     plt.show()
-    
 
 
 if __name__ == "__main__":
