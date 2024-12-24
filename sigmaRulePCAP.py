@@ -147,7 +147,7 @@ def parse_sigma_for_visualization(unified_sigma_list):
 
 
 if __name__ == "__main__":
-    pcap_file = "normal_traffic.pcap"
+    pcap_file = "zzz.pcap"
     sigma_files = [
         "sigma/sigmaOne.yml",
         "sigma/sigmaTwo.yml"

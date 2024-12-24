@@ -166,8 +166,8 @@ class RuleDetector:
             self.src_to_ports[src_ip].add(dst_port)
             if (len(self.src_to_ports[src_ip]) >= self.SCAN_THRESHOLD
                     and not self.port_scan_detected[src_ip]):
-                print(f"Port scanning detected from {src_ip}: "
-                      f"scanned at least {len(self.src_to_ports[src_ip])} ports!")
+                print(f"\033[91m[WARNING!] Port scanning detected from {src_ip}: "
+                    f"scanned at least {len(self.src_to_ports[src_ip])} ports!\033[0m")
                 self.port_scan_detected[src_ip] = True
  
         # 4. Sprawdzamy duży / częsty ruch (dla IP)
@@ -326,7 +326,7 @@ if __name__ == "__main__":
         scan_threshold=10,            
         large_traffic_threshold=1000,
         frequent_traffic_window=60,  
-        frequent_traffic_threshold=50,
+        frequent_traffic_threshold=50, 
         timeout=300,                  
         flow_size_threshold=50000      # Próg sumy payloadu w bajtach w danym flow
     )
