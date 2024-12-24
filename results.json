@@ -1,0 +1,3975 @@
+[
+  {
+    "source_ip": "::",
+    "dst_ip": "ff02::1:ff43:c9b1",
+    "protocol": "IPv6-ICMP",
+    "dst_port": 0,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 0,
+    "bidirectional_first_seen_ms": 6712,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::2",
+    "protocol": "IPv6-ICMP",
+    "dst_port": 0,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 8001,
+    "bidirectional_first_seen_ms": 6712,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::16",
+    "protocol": "IPv6-ICMP",
+    "dst_port": 0,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 501,
+    "bidirectional_first_seen_ms": 6712,
+    "source": "ML"
+  },
+  {
+    "source_ip": "10.0.2.115",
+    "dst_ip": "8.8.8.8",
+    "protocol": "UDP",
+    "dst_port": 53,
+    "ip_version": 4,
+    "bidirectional_duration_ms": 0,
+    "bidirectional_first_seen_ms": 7867,
+    "source": "ML"
+  },
+  {
+    "source_ip": "10.0.2.115",
+    "dst_ip": "8.8.4.4",
+    "protocol": "UDP",
+    "dst_port": 53,
+    "ip_version": 4,
+    "bidirectional_duration_ms": 246,
+    "bidirectional_first_seen_ms": 8865,
+    "source": "ML"
+  },
+  {
+    "source_ip": "10.0.2.115",
+    "dst_ip": "8.8.4.4",
+    "protocol": "UDP",
+    "dst_port": 53,
+    "ip_version": 4,
+    "bidirectional_duration_ms": 242,
+    "bidirectional_first_seen_ms": 9112,
+    "source": "ML"
+  },
+  {
+    "source_ip": "10.0.2.2",
+    "dst_ip": "10.0.2.115",
+    "protocol": "ICMP",
+    "dst_port": 0,
+    "ip_version": 4,
+    "bidirectional_duration_ms": 100,
+    "bidirectional_first_seen_ms": 105655,
+    "source": "ML"
+  },
+  {
+    "source_ip": "10.0.2.115",
+    "dst_ip": "8.8.8.8",
+    "protocol": "UDP",
+    "dst_port": 53,
+    "ip_version": 4,
+    "bidirectional_duration_ms": 11,
+    "bidirectional_first_seen_ms": 108329,
+    "source": "ML"
+  },
+  {
+    "source_ip": "10.0.2.115",
+    "dst_ip": "8.8.8.8",
+    "protocol": "UDP",
+    "dst_port": 53,
+    "ip_version": 4,
+    "bidirectional_duration_ms": 132,
+    "bidirectional_first_seen_ms": 109187,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 433588,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 860612,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63050,
+    "bidirectional_first_seen_ms": 1287696,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63048,
+    "bidirectional_first_seen_ms": 1714800,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 2141854,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63019,
+    "bidirectional_first_seen_ms": 2568878,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 2995902,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 3422928,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 3849952,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 4276975,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 4704000,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 5131023,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 5558048,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 5985072,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 6412096,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 6839120,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 7266144,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 7693167,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 8120191,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63015,
+    "bidirectional_first_seen_ms": 8547216,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 8974239,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 9401263,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 9828287,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 10255311,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 10682335,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 11109359,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 11536383,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 11963407,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 12390431,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 12817455,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 13244479,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 13671503,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 14098527,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 14525551,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 14952575,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 15379599,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 15806623,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 16233647,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 16660671,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 17087695,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 17514719,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 17941743,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 18368767,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 18795791,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 19222815,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 19649839,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 20076863,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63015,
+    "bidirectional_first_seen_ms": 20503887,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 20930910,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 21357934,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 21784959,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 22211982,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 22639006,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 23066031,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 23493054,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 23920078,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63015,
+    "bidirectional_first_seen_ms": 24347103,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 24774126,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 25201150,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 25628174,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 26055198,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 26482222,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 26909246,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 27336270,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 27763294,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 28190318,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 28617342,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 29044366,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 29471390,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 29898414,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 30325438,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 30752461,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 31179485,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 31606509,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 32033533,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 32460557,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 32887581,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 33314605,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 33741630,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 34168654,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 34595678,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 35022702,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 35449725,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 35876749,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 36303772,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63015,
+    "bidirectional_first_seen_ms": 36730798,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 37157821,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 37584845,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 38011870,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 38438893,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 38865917,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 39292941,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 39719965,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 40146989,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 40574013,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 41001037,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 41428061,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 41855085,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 42282109,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 42709133,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 43136157,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 43563181,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 43990205,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 44417228,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63015,
+    "bidirectional_first_seen_ms": 44844253,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 45271276,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63019,
+    "bidirectional_first_seen_ms": 45698298,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 46125324,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 46552348,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 46979372,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 47406397,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 47833420,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 48260444,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 48687469,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 49114492,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 49541516,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 49968540,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 50395564,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 50822588,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 51249612,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 51676636,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 52103659,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 52530684,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 52957708,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 53384732,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 53811756,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 54238780,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 54665803,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 55092827,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 55519851,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 55946875,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 56373898,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 56800923,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 57227948,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 57654971,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 58081996,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 58509019,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63015,
+    "bidirectional_first_seen_ms": 58936044,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 59363067,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 59790091,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 60217114,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 60644139,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 61071163,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63015,
+    "bidirectional_first_seen_ms": 61498188,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 61925211,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 62352234,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 62779257,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 63206281,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 63633305,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 64060409,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 64487434,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 64914459,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 65341483,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 65768507,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 66195529,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 66622553,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63019,
+    "bidirectional_first_seen_ms": 67049576,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 67476601,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 67903625,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 68330650,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 68757673,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63019,
+    "bidirectional_first_seen_ms": 69184696,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 69611723,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 70038746,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 70465769,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63019,
+    "bidirectional_first_seen_ms": 70892792,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 71319818,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 71746840,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 72173865,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 72600888,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63019,
+    "bidirectional_first_seen_ms": 73027912,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63019,
+    "bidirectional_first_seen_ms": 73454936,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 73881961,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63019,
+    "bidirectional_first_seen_ms": 74308984,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 74736010,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 75163032,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 75590056,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63019,
+    "bidirectional_first_seen_ms": 76017080,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 76444104,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63019,
+    "bidirectional_first_seen_ms": 76871128,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 77298152,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63019,
+    "bidirectional_first_seen_ms": 77725176,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 78152200,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 78579226,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 79006250,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 79433274,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 79860298,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 80287322,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 80714346,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 81141370,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 81568394,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 81995418,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 82422441,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 82849465,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 83276489,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 83703513,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 84130538,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 84557561,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63019,
+    "bidirectional_first_seen_ms": 84984583,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 85411609,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 85838633,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 86265657,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 86692681,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 87119704,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63019,
+    "bidirectional_first_seen_ms": 87546727,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 87973752,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 88400776,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 88827800,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 89254823,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 89681848,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63019,
+    "bidirectional_first_seen_ms": 90108871,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 90535895,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 90962920,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 91389944,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 91816969,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 92243993,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 92671016,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 93098040,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 93525064,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 93952088,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 94379113,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 94806137,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 95233161,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 95660184,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63019,
+    "bidirectional_first_seen_ms": 96087206,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 96514232,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 96941256,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 97368280,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 97795304,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 98222328,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 98649352,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63015,
+    "bidirectional_first_seen_ms": 99076377,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 99503400,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 99930424,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 100357448,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 100784472,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 101211496,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 101638520,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 102065544,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 102492568,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 102919591,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 103346616,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 103773640,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 104200664,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 104627688,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 105054712,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 105481736,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 105908759,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 106335784,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 106762807,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 107189832,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 107616856,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 108043879,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 108470904,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63015,
+    "bidirectional_first_seen_ms": 108897928,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 109324952,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 109751975,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 110179000,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 110606023,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 111033047,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 111460071,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 111887095,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 112314119,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 112741143,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 113168167,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 113595191,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 114022215,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 114449239,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 114876263,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 115303287,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 115730311,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 116157335,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 116584359,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 117011383,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 117438407,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 117865430,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 118292454,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 118719479,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 119146502,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 119573526,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 120000551,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 120427574,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 120854598,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 121281621,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 121708647,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 122135670,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 122562694,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 122989718,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 123416742,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 123843767,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 124270791,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 124697814,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 125124839,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 125551862,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 125978886,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 126405910,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 126832934,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 127259959,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 127686982,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 128114006,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 128541028,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 128968054,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 129395078,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 129822102,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 130249125,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 130676150,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 131103174,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 131530198,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 131957221,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 132384245,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 132811270,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 133238294,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 133665317,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 134092341,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63015,
+    "bidirectional_first_seen_ms": 134519366,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 134946390,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 135373413,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 135800437,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 136227461,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63015,
+    "bidirectional_first_seen_ms": 136654486,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 137081509,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 137508533,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 137935557,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 138362581,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63019,
+    "bidirectional_first_seen_ms": 138789603,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 139216628,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 139643653,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 140070677,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 140497701,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 140924725,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 141351749,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 141778773,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 142205797,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 142632821,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 143059844,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 143486869,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 143913893,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 144340917,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 144767941,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 145194964,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 145621988,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 146049013,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63019,
+    "bidirectional_first_seen_ms": 146476034,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 146903060,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 147330084,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 147757108,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 148184132,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 148611156,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 149038180,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 149465204,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 149892229,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 150319252,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 150746276,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 151173300,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 151600324,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 152027347,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 152454372,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 152881396,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 153308419,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63018,
+    "bidirectional_first_seen_ms": 153735442,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 154162468,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 154589491,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 155016516,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 155443540,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 155870563,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 156297588,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 156724611,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 157151636,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 157578659,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 158005684,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 158432707,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 158859731,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 159286755,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 159713779,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 160140803,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 160567827,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 160994851,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 161421875,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 161848899,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 162275923,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 162702947,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 163129971,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63016,
+    "bidirectional_first_seen_ms": 163556995,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 63017,
+    "bidirectional_first_seen_ms": 163984019,
+    "source": "ML"
+  },
+  {
+    "source_ip": "fe80::a866:72ce:9643:c9b1",
+    "dst_ip": "ff02::1:2",
+    "protocol": "UDP",
+    "dst_port": 547,
+    "ip_version": 6,
+    "bidirectional_duration_ms": 31011,
+    "bidirectional_first_seen_ms": 164411043,
+    "source": "ML"
+  },
+  {
+    "timestamp": "2024-12-24T01:06:24.438745",
+    "source_ip": "127.0.0.1",
+    "destination_ip": "127.0.0.1",
+    "scanned_ports": "1, 21, 22, 23, 25, 53, 80, 110, 111, 113, 135, 139, 143, 199, 256, 443, 445, 481, 512, 554, 587, 843, 993, 995, 1025, 1051, 1063, 1095, 1102, 1104, 1106, 1117, 1124, 1198, 1218, 1641, 1718, 1720, 1723, 1998, 2009, 2135, 2366, 3052, 3306, 3389, 4045, 4900, 5222, 5440, 5859, 5900, 6123, 7800, 8080, 8193, 8400, 8701, 8888, 9485, 10215, 12265, 13456, 20222, 34952, 36779, 41144, 41426, 41428, 41434, 41440, 41442, 41444, 41456, 41472, 42106, 43065, 43838, 44980, 49157, 50800, 51022, 51824, 53104, 56344, 56356, 56360, 56370, 56384, 56394, 56404, 56414, 56418, 56432, 56434, 56444, 56446, 56450, 56462, 56478, 56488, 56490, 56504, 56516, 56520, 56530, 56544, 56560, 56576, 56578, 56580, 56586, 56594, 60231, 60232, 60233, 60234, 60235, 60236, 60243, 60247, 60248, 60249, 60250",
+    "flow_bytes": 10089,
+    "query": [
+      "Port scanning",
+      "Large traffic",
+      "Frequent traffic"
+    ],
+    "source": "rules"
+  },
+  {
+    "timestamp": "1970-01-01T01:01:48.504595",
+    "source": "Sigma",
+    "source_ip": "10.0.2.115"
+  },
+  {
+    "timestamp": "1970-01-01T01:01:48.517076",
+    "source": "Sigma",
+    "source_ip": "8.8.8.8"
+  },
+  {
+    "timestamp": "1970-01-01T01:01:49.187607",
+    "source": "Sigma",
+    "source_ip": "10.0.2.115"
+  },
+  {
+    "timestamp": "1970-01-01T01:01:49.319285",
+    "source": "Sigma",
+    "source_ip": "8.8.8.8"
+  }
+]
